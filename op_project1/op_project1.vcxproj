@@ -131,12 +131,14 @@
     <ClCompile Include="creature.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="plant.cpp" />
+    <ClCompile Include="trawa.cpp" />
     <ClCompile Include="world.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="animal.h" />
     <ClInclude Include="creature.h" />
     <ClInclude Include="plant.h" />
+    <ClInclude Include="trawa.h" />
     <ClInclude Include="types.h" />
     <ClInclude Include="world.h" />
   </ItemGroup>

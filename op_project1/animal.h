@@ -1,5 +1,7 @@
 #pragma once
 #include "creature.h"
+#include "types.h"
+
 
 class Animal : public Creature {
 private:
