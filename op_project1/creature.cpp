@@ -5,5 +5,6 @@ std::ostream& operator<<(std::ostream& os, const Creature& creature) {
 	return os;
 }
 
+
 Creature::~Creature() {
 }

@@ -5,7 +5,8 @@ class Trawa : public Plant {
 
 	public:
 	Trawa();
-	void action() override;
+	Trawa(World* world);
+	//void action() override;
 	void collision(Creature* creature) override;
 	void draw() override;
 	~Trawa() override;

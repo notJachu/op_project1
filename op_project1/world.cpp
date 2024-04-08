@@ -40,10 +40,14 @@ void World::addCreature(Creature* creature) {
 }
 
 void World::print(std::ostream& os) const {
+	for (int i = 0; i < creatureCount; i++) {
+		os << *creatures[i] << std::endl;
+	}
 }
 
 void World::playTurn() {
-	for (int i = 0; i < creatureCount; i++) {
+	int c = creatureCount;
+	for (int i = 0; i < c; i++) {
 		creatures[i]->action();
 	}
 }
