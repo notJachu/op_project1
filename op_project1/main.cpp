@@ -2,8 +2,8 @@
 #include "world.h"
 #include "creature.h"
 #include "animal.h"
-#include "plant.h"
-#include "trawa.h"
+#include "plants/plant.h"
+#include "plants/trawa.h"
 
 
 int main() {

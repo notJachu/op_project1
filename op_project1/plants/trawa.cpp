@@ -1,26 +1,22 @@
-#include "plants/trawa.h"
+#include "trawa.h"
 
 Trawa::Trawa() {
 	this->power = 0;
 	this->initiative = 0;
 	this->age = 0;
-	this->position = { 3, 3 };
+	this->position = { 0, 0 };
 }
 
 Trawa::Trawa(World* world) {
 	this->power = 0;
 	this->initiative = 0;
 	this->age = 0;
-	this->position = { 3, 3 };
+	this->position = { 0, 0 };
 	this->world = world;
 }
 
 void Trawa::action() {
 	plant_new(world);
-	Point* positions = world->get_free_neighbours(this->position);
-	for (int i = 0; i < 4; i++) {
-		std::cout<< positions[i].x << " " << positions[i].y << std::endl;
-	}
 }
 
 void Trawa::collision(Creature* creature)

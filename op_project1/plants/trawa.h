@@ -1,5 +1,5 @@
 #pragma once
-#include "plants/plant.h"
+#include "plant.h"
 
 class Trawa : public Plant {
 
