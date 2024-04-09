@@ -15,5 +15,7 @@ public:
   virtual void action() = 0;
   virtual void collision(Creature* creature) = 0;
   virtual void draw() = 0;
+  int getX();
+  int getY();
   virtual ~Creature();
 };

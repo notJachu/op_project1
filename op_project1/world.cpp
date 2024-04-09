@@ -1,12 +1,23 @@
 #include "world.h"
 #include "types.h"
 
+void World::init_array() {
+	creatures = new Creature*[20*20];
+	array_size = 20*20;
+	for (int i = 0; i < 20 * 20; i++) {
+		creatures[i] = nullptr;
+	}
+	width = 20;
+	height = 20;
+}
+
 World::World() {
 	this->creatures = nullptr;
 	this->creatureCount = 0;
 	this->array_size = 0;
 	this->width = 0;
 	this->height = 0;
+	init_array();
 }
 
 World::~World() {
@@ -21,7 +32,9 @@ void World::addCreature(Creature* creature) {
 	if (creatures == nullptr) {
 		creatures = new Creature*[20*20];
 		array_size = 20*20;
-		creatures[0] = creature;
+		int x = creature->getX();
+		int y = creature->getY();
+		creatures[(width * (y - 1)) + x - 1] = creature;
 		creatureCount = 1;
 		width = 20;
 		height = 20;
@@ -38,21 +51,27 @@ void World::addCreature(Creature* creature) {
 		  array_size *= 2;
 	}
 	else {
-		creatures[creatureCount] = creature;
+		int x = creature->getX();
+		int y = creature->getY();
+		creatures[(width * (y - 1)) + x - 1] = creature;
 		creatureCount++;
 	}
 }
 
 void World::print(std::ostream& os) const {
-	for (int i = 0; i < creatureCount; i++) {
-		os << *creatures[i] << std::endl;
+	for (int i = 0; i < array_size; i++) {
+		if (creatures[i] != nullptr) {
+			os << *creatures[i] << std::endl;
+		}
 	}
 }
 
 void World::playTurn() {
-	int c = creatureCount;
+	int c = array_size;
 	for (int i = 0; i < c; i++) {
-		creatures[i]->action();
+		if (creatures[i] != nullptr) {
+			creatures[i]->action();
+		}
 	}
 }
 
@@ -61,16 +80,16 @@ Point* World::get_free_neighbours(Point position) {
 	for (int i = 0; i < 4; i++) {
 		res[i] = { -1 , -1 };	// not a valid position
 	}
-	if (position.x > 0 && creatures[((width * (position.y - 1)) + position.x - 1) - 1] != nullptr) {
+	if (position.x > 0 && creatures[((width * (position.y - 1)) + position.x - 1) - 1] == nullptr) {
 		res[0] = { position.x - 1, position.y };
 	}
-	else if (position.x < width - 1 && creatures[((width * (position.y - 1)) + position.x - 1) + 1] != nullptr) {
+	if (position.x < width - 1 && creatures[((width * (position.y - 1)) + position.x - 1) + 1] == nullptr) {
 		res[1] = { position.x + 1, position.y };
 	}
-	else if (position.y > 0 && creatures[((width * (position.y - 1)) + position.x - 1) - width] != nullptr) {
+	if (position.y > 0 && creatures[((width * (position.y - 1)) + position.x - 1) - width] == nullptr) {
 		res[2] = { position.x, position.y - 1 };
 	}
-	else if (position.y < height - 1 && creatures[((width * (position.y - 1)) + position.x - 1) + width] != nullptr) {
+	if (position.y < height - 1 && creatures[((width * (position.y - 1)) + position.x - 1) + width] == nullptr) {
 		res[3] = { position.x, position.y + 1 };
 	}
 	return res;

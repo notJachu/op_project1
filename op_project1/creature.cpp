@@ -6,5 +6,13 @@ std::ostream& operator<<(std::ostream& os, const Creature& creature) {
 }
 
 
+int Creature::getX() {
+	return this->position.x;
+}
+
+int Creature::getY() {
+	return this->position.y;
+}
+
 Creature::~Creature() {
 }

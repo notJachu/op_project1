@@ -9,6 +9,7 @@ private:
 	int array_size;
 	int width;
 	int height;
+	void init_array();
 
 public:
 	World();
