@@ -16,8 +16,10 @@ Mlecz::Mlecz(World* world, Point pos) {
 }
 
 void Mlecz::action() {
+	// 3 attempts to plant new Mlecz	
 	for (int i = 0; i < 3; i++) {
-		plant_new(world);
+		Point* positions = world->get_free_neighbours(this->position);
+		plant_new(world, positions);
 	}
 }
 

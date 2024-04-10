@@ -15,7 +15,19 @@ public:
   virtual void action() = 0;
   virtual void collision(Creature* creature) = 0;
   virtual void draw() = 0;
+  virtual void kill() = 0;
+  // getters
   int getX();
   int getY();
+  int getPower();
+  int getInitiative();
+  int getAge();
+	
+  // setters
+  void setX(int x);
+  void setY(int y);
+  void setPower(int power);
+  void setInitiative(int initiative);
+  void setAge(int age);
   virtual ~Creature();
 };

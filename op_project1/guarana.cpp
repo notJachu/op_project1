@@ -1,0 +1,34 @@
+#include "guarana.h"
+
+Guarana::Guarana(Point pos) {
+	this->power = 0;
+	this->initiative = 0;
+	this->age = 0;
+	this->position = pos;
+}
+
+Guarana::Guarana(World* world, Point pos) {
+	this->power = 0;
+	this->initiative = 0;
+	this->age = 0;
+	this->position = pos;
+	this->world = world;
+}
+
+void Guarana::action() {
+	Point* positions = world->get_free_neighbours(this->position);
+	plant_new(world, positions);
+}
+
+void Guarana::collision(Creature* creature) {
+	int power = creature->getPower();
+	creature->setPower(power + 3);
+}
+
+void Guarana::draw()
+{
+}
+
+Guarana::~Guarana()
+{
+}
