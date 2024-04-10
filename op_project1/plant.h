@@ -16,5 +16,6 @@ public:
 	void collision(Creature* creature) override;
 	void draw() override;
 	void setWorld(World* world);
+	void kill() override;
 	~Plant() override;
 };

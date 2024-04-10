@@ -16,8 +16,8 @@ Trawa::Trawa(World* world, Point pos) {
 }
 
 void Trawa::action() {
-	plant_new(world);
 	Point* positions = world->get_free_neighbours(this->position);
+	plant_new(world, positions);
 	for (int i = 0; i < 4; i++) {
 		std::cout<< positions[i].x << " " << positions[i].y << std::endl;
 	}

@@ -5,6 +5,7 @@
 class World {
 private:
 	Creature** creatures;
+	Creature** world_map;
 	int creatureCount;
 	int array_size;
 	int width;

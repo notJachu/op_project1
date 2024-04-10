@@ -71,6 +71,10 @@ void Plant::setWorld(World* world) {
 	this->world = world;
 }
 
+void Plant::kill()
+{
+}
+
 Plant::~Plant()
 {
 }

@@ -2,13 +2,19 @@
 #include "types.h"
 
 void World::init_array() {
-	creatures = new Creature*[20*20];
-	array_size = 20*20;
-	for (int i = 0; i < 20 * 20; i++) {
+	creatures = new Creature*[20];
+	array_size = 20;
+	for (int i = 0; i < array_size; i++) {
 		creatures[i] = nullptr;
 	}
+	creatureCount = 0;
+
 	width = 20;
 	height = 20;
+	world_map = new Creature * [width * height];
+	for (int i = 0; i < width * height; i++) {
+		world_map[i] = nullptr;
+	}
 }
 
 World::World() {
@@ -30,14 +36,25 @@ World::~World() {
 
 void World::addCreature(Creature* creature) {
 	if (creatures == nullptr) {
-		creatures = new Creature*[20*20];
-		array_size = 20*20;
-		int x = creature->getX();
-		int y = creature->getY();
-		creatures[(width * (y - 1)) + x - 1] = creature;
-		creatureCount = 1;
+
+		creatures = new Creature*[20];
+		array_size = 20;
+		for (int i = 0; i < array_size; i++) {
+			creatures[i] = nullptr;
+		}
+
 		width = 20;
 		height = 20;
+		world_map = new Creature * [width * height];
+		for (int i = 0; i < width * height; i++) {
+			world_map[i] = nullptr;
+		}
+
+		int x = creature->getX();
+		int y = creature->getY();
+		world_map[(width * (y - 1)) + x - 1] = creature;
+		creatures[0] = creature;
+		creatureCount = 1;
 	}
 	else if (creatureCount == array_size){
 		  Creature** temp = new Creature*[array_size * 2];
@@ -53,7 +70,8 @@ void World::addCreature(Creature* creature) {
 	else {
 		int x = creature->getX();
 		int y = creature->getY();
-		creatures[(width * (y - 1)) + x - 1] = creature;
+		world_map[(width * (y - 1)) + x - 1] = creature;
+		creatures[creatureCount] = creature;
 		creatureCount++;
 	}
 }
@@ -80,16 +98,16 @@ Point* World::get_free_neighbours(Point position) {
 	for (int i = 0; i < 4; i++) {
 		res[i] = { -1 , -1 };	// not a valid position
 	}
-	if (position.x > 0 && creatures[((width * (position.y - 1)) + position.x - 1) - 1] == nullptr) {
+	if (position.x > 0 && world_map[((width * (position.y - 1)) + position.x - 1) - 1] == nullptr) {
 		res[0] = { position.x - 1, position.y };
 	}
-	if (position.x < width - 1 && creatures[((width * (position.y - 1)) + position.x - 1) + 1] == nullptr) {
+	if (position.x < width - 1 && world_map[((width * (position.y - 1)) + position.x - 1) + 1] == nullptr) {
 		res[1] = { position.x + 1, position.y };
 	}
-	if (position.y > 0 && creatures[((width * (position.y - 1)) + position.x - 1) - width] == nullptr) {
+	if (position.y > 0 && world_map[((width * (position.y - 1)) + position.x - 1) - width] == nullptr) {
 		res[2] = { position.x, position.y - 1 };
 	}
-	if (position.y < height - 1 && creatures[((width * (position.y - 1)) + position.x - 1) + width] == nullptr) {
+	if (position.y < height - 1 && world_map[((width * (position.y - 1)) + position.x - 1) + width] == nullptr) {
 		res[3] = { position.x, position.y + 1 };
 	}
 	return res;
