@@ -1,17 +1,17 @@
-#include "plants/trawa.h"
+#include "trawa.h"
 
-Trawa::Trawa() {
+Trawa::Trawa(Point pos) {
 	this->power = 0;
 	this->initiative = 0;
 	this->age = 0;
-	this->position = { 3, 3 };
+	this->position = pos;
 }
 
-Trawa::Trawa(World* world) {
+Trawa::Trawa(World* world, Point pos) {
 	this->power = 0;
 	this->initiative = 0;
 	this->age = 0;
-	this->position = { 3, 3 };
+	this->position = pos;
 	this->world = world;
 }
 

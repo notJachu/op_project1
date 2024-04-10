@@ -1,13 +1,14 @@
 #pragma once
+
 #include "plant.h"
 
-class Trawa : public Plant {
+class Mlecz : public Plant {
 
 	public:
-	Trawa(Point pos);
-	Trawa(World* world, Point pos);
+	Mlecz(Point pos);
+	Mlecz(World* world, Point pos);
 	void action() override;
 	void collision(Creature* creature) override;
 	void draw() override;
-	~Trawa() override;
+	~Mlecz() override;
 };

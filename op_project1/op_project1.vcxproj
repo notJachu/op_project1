@@ -130,6 +130,7 @@
     <ClCompile Include="animal.cpp" />
     <ClCompile Include="creature.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="mlecz.cpp" />
     <ClCompile Include="plant.cpp" />
     <ClCompile Include="trawa.cpp" />
     <ClCompile Include="world.cpp" />
@@ -137,6 +138,7 @@
   <ItemGroup>
     <ClInclude Include="animal.h" />
     <ClInclude Include="creature.h" />
+    <ClInclude Include="mlecz.h" />
     <ClInclude Include="plant.h" />
     <ClInclude Include="trawa.h" />
     <ClInclude Include="types.h" />
