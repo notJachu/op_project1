@@ -71,8 +71,8 @@ void Plant::setWorld(World* world) {
 	this->world = world;
 }
 
-void Plant::kill()
-{
+void Plant::kill() {
+	world->removeCreature(this);
 }
 
 Plant::~Plant()

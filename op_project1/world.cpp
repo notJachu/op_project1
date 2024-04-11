@@ -76,6 +76,25 @@ void World::addCreature(Creature* creature) {
 	}
 }
 
+void World::removeCreature(Creature* creature) {
+	int index = creature->getX() + (creature->getY() - 1) * width - 1;
+	world_map[index] = nullptr;
+	for (int i = 0; i < creatureCount; i++) {
+		if (creatures[i] == creature) {
+			creatures[i] = nullptr;
+			creatures[i] = creatures[creatureCount - 1];
+			creatureCount--;
+			break;
+		}
+	}
+	delete creature;
+	creature = nullptr;
+}
+
+Creature* World::getCreature(int x, int y) {
+	return world_map[(width * (y - 1)) + x - 1];
+}
+
 void World::print(std::ostream& os) const {
 	for (int i = 0; i < array_size; i++) {
 		if (creatures[i] != nullptr) {
