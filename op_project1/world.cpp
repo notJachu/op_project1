@@ -94,6 +94,13 @@ void World::removeCreature(Creature* creature) {
 	creature = nullptr;
 }
 
+void World::updateCreaturePosition(Point position, Point target) {
+	int index_now = position.x + (position.y - 1) * width - 1;
+	int index_target = target.x + (target.y - 1) * width - 1;
+	world_map[index_target] = world_map[index_now];
+	world_map[index_now] = nullptr;
+}
+
 Creature* World::getCreature(int x, int y) {
 	int index = x + (y - 1) * width - 1;
 	if (index < 0 || index >= width * height) {

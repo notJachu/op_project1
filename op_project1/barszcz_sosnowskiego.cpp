@@ -2,7 +2,7 @@
 #include "types.h"
 
 BarszczSosnowskiego::BarszczSosnowskiego(Point pos) {
-	this->power = 0;
+	this->power = 10;
 	this->initiative = 0;
 	this->age = 0;
 	this->position = pos;
@@ -10,7 +10,7 @@ BarszczSosnowskiego::BarszczSosnowskiego(Point pos) {
 }
 
 BarszczSosnowskiego::BarszczSosnowskiego(World* world, Point pos) {
-this->power = 0;
+	this->power = 10;
 	this->initiative = 0;
 	this->age = 0;
 	this->position = pos;

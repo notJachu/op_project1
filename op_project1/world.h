@@ -17,6 +17,7 @@ public:
 	~World();
 	void addCreature(Creature* creature);
 	void removeCreature(Creature* creature);
+	void updateCreaturePosition(Point position, Point target);
 	Creature* getCreature(int x, int y);
 	void print(std::ostream& os) const;
 	void playTurn();
