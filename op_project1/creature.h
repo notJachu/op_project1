@@ -8,6 +8,7 @@ protected:
 	int initiative;
 	int age;
 	Point position;
+	creature_type type;
 	virtual void print(std::ostream& os) const = 0;
 	friend std::ostream& operator<<(std::ostream& os, const Creature& creature);
 	
@@ -22,6 +23,7 @@ public:
   int getPower();
   int getInitiative();
   int getAge();
+  creature_type getType();
 	
   // setters
   void setX(int x);

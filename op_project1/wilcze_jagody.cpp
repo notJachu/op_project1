@@ -5,6 +5,7 @@ WilczeJagody::WilczeJagody(Point pos) {
 	this->initiative = 0;
 	this->age = 0;
 	this->position = pos;
+	this->type = WILCZE_JAGODY;
 }
 
 WilczeJagody::WilczeJagody(World* world, Point pos) {
@@ -12,6 +13,7 @@ WilczeJagody::WilczeJagody(World* world, Point pos) {
 	this->initiative = 0;
 	this->age = 0;
 	this->position = pos;
+	this->type = WILCZE_JAGODY;
 	this->world = world;
 }
 

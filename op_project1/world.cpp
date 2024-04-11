@@ -77,6 +77,9 @@ void World::addCreature(Creature* creature) {
 }
 
 void World::removeCreature(Creature* creature) {
+	if (creature == nullptr) {
+		return;
+	}
 	int index = creature->getX() + (creature->getY() - 1) * width - 1;
 	world_map[index] = nullptr;
 	for (int i = 0; i < creatureCount; i++) {
@@ -92,6 +95,10 @@ void World::removeCreature(Creature* creature) {
 }
 
 Creature* World::getCreature(int x, int y) {
+	int index = x + (y - 1) * width - 1;
+	if (index < 0 || index >= width * height) {
+		return nullptr;
+	}
 	return world_map[(width * (y - 1)) + x - 1];
 }
 

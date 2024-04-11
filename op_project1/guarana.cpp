@@ -5,6 +5,7 @@ Guarana::Guarana(Point pos) {
 	this->initiative = 0;
 	this->age = 0;
 	this->position = pos;
+	this->type = GUARANA;
 }
 
 Guarana::Guarana(World* world, Point pos) {
@@ -12,6 +13,7 @@ Guarana::Guarana(World* world, Point pos) {
 	this->initiative = 0;
 	this->age = 0;
 	this->position = pos;
+	this->type = GUARANA;
 	this->world = world;
 }
 

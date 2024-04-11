@@ -5,6 +5,7 @@ Trawa::Trawa(Point pos) {
 	this->initiative = 0;
 	this->age = 0;
 	this->position = pos;
+	this->type = TRAWA;
 }
 
 Trawa::Trawa(World* world, Point pos) {
@@ -12,6 +13,7 @@ Trawa::Trawa(World* world, Point pos) {
 	this->initiative = 0;
 	this->age = 0;
 	this->position = pos;
+	this->type = TRAWA;
 	this->world = world;
 }
 

@@ -26,6 +26,10 @@ int Creature::getAge() {
 	return this->age;
 }
 
+creature_type Creature::getType(){
+	return this->type;
+}
+
 void Creature::setX(int x) {
 	this->position.x = x;
 }

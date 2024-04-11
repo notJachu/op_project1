@@ -5,6 +5,7 @@ Mlecz::Mlecz(Point pos) {
 	this->initiative = 0;
 	this->age = 0;
 	this->position = pos;
+	this->type = MLECZ;
 }
 
 Mlecz::Mlecz(World* world, Point pos) {
@@ -12,6 +13,7 @@ Mlecz::Mlecz(World* world, Point pos) {
 	this->initiative = 0;
 	this->age = 0;
 	this->position = pos;
+	this->type = MLECZ;
 	this->world = world;
 }
 
