@@ -109,6 +109,16 @@ Creature* World::getCreature(int x, int y) {
 	return world_map[(width * (y - 1)) + x - 1];
 }
 
+int World::getWidth() const
+{
+	return this->width;
+}
+
+int World::getHeight() const
+{
+	return this->height;
+}
+
 void World::print(std::ostream& os) const {
 	for (int i = 0; i < array_size; i++) {
 		if (creatures[i] != nullptr) {

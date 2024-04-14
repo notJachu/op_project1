@@ -4,6 +4,7 @@
 #include "animal.h"
 #include "plant.h"
 #include "trawa.h"
+#include "wilk.h"
 
 
 int main() {

@@ -19,6 +19,8 @@ public:
 	void removeCreature(Creature* creature);
 	void updateCreaturePosition(Point position, Point target);
 	Creature* getCreature(int x, int y);
+	int getWidth() const;
+	int getHeight() const;
 	void print(std::ostream& os) const;
 	void playTurn();
 	Point* get_free_neighbours(Point position);

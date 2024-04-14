@@ -1,36 +1,35 @@
 #include "animal.h"
 #include "ctime"
 
-void Animal::move() {
-	Point newPosition = position;
-	int direction = rand() % 4;
-	switch (direction) {
-	case 0:
-		newPosition.y++;
-		break;
-	case 1:
-		newPosition.y--;
-		break;
-	case 2:
-		newPosition.x++;
-		break;
-	case 3:
-		newPosition.x--;
-		break;
+Point Animal::move() const {
+	Point positions[4]{};
+	int count_positions = 0;
+
+	for (int i = 0; i < 4; i++) positions[i] = { -1, -1 };
+
+	if (position.x - 1 >= 0) {
+		positions[count_positions] = { position.x - 1, position.y };
+		count_positions++;
+	}
+	if (position.x + 1 < world->getWidth()) {
+		positions[count_positions] = { position.x + 1, position.y };
+		count_positions++;
+	}
+	if (position.y - 1 >= 0) {
+		positions[count_positions] = { position.x, position.y - 1 };
+		count_positions++;
+	}
+	if (position.y + 1 < world->getHeight()) {
+		positions[count_positions] = { position.x, position.y + 1 };
+		count_positions++;
 	}
 
-	Creature* creature = world->getCreature(newPosition.x, newPosition.y);
-	if (creature == nullptr) {
-		position = newPosition;
-		world->updateCreaturePosition(this->position, newPosition);
-	} else if (creature->getType() == this->type) {
-		if (!reproduce()) {
-			dynamic_cast<Animal*>(creature)->reproduce();
-		}
-	} else {
-		creature->collision(this);
-	}
+	if (count_positions == 0) return position;
 
+	int direction = rand() % count_positions;
+	
+
+	return positions[direction];
 }
 
 bool Animal::reproduce() {
@@ -68,8 +67,32 @@ Animal::Animal(Point pos, World* world) {
 	this->age = 0;
 }
 
-void Animal::action()
-{
+Animal::Animal() {
+	this->power = 0;
+	this->initiative = 0;
+	this->age = 0;
+	this->position = { 0,0 };
+	this->world = nullptr;
+}
+
+void Animal::action() {
+	Point newPosition = move();
+
+	if 	(newPosition.x == position.x && newPosition.y == position.y) return; // no move 
+
+	Creature* creature = world->getCreature(newPosition.x, newPosition.y);
+	if (creature == nullptr) {
+		position = newPosition;
+		world->updateCreaturePosition(this->position, newPosition);
+	}
+	else if (creature->getType() == this->type) {
+		if (!reproduce()) {
+			dynamic_cast<Animal*>(creature)->reproduce();
+		}
+	}
+	else {
+		creature->collision(this);
+	}
 }
 
 void Animal::collision(Creature* creature) {

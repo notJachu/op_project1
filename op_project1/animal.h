@@ -5,14 +5,15 @@
 
 
 class Animal : public Creature {
-private:
+protected:
 	 World* world;
-	 void move();
+	 virtual Point move() const;
 	 bool reproduce();
 	 void print(std::ostream& os) const override;
 public:
 	Animal(int power, int initiative, int age, Point position, World* world);
 	Animal(Point pos, World* world);
+	Animal();
 	void action() override;
 	void collision(Creature* creature) override;
 	void draw() override;

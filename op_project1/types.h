@@ -11,6 +11,7 @@ enum creature_type {
 	LIS,
 	TUTEL,
 	ANTYLOPA,
+	OWCA,
 	CYBER_OWCA,
 	TRAWA,
 	MLECZ,

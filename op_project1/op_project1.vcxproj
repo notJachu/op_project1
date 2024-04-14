@@ -131,11 +131,14 @@
     <ClCompile Include="barszcz_sosnowskiego.cpp" />
     <ClCompile Include="creature.cpp" />
     <ClCompile Include="guarana.cpp" />
+    <ClCompile Include="lis.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mlecz.cpp" />
+    <ClCompile Include="owca.cpp" />
     <ClCompile Include="plant.cpp" />
     <ClCompile Include="trawa.cpp" />
     <ClCompile Include="wilcze_jagody.cpp" />
+    <ClCompile Include="wilk.cpp" />
     <ClCompile Include="world.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -143,11 +146,14 @@
     <ClInclude Include="barszcz_sosnowskiego.h" />
     <ClInclude Include="creature.h" />
     <ClInclude Include="guarana.h" />
+    <ClInclude Include="lis.h" />
     <ClInclude Include="mlecz.h" />
+    <ClInclude Include="owca.h" />
     <ClInclude Include="plant.h" />
     <ClInclude Include="trawa.h" />
     <ClInclude Include="types.h" />
     <ClInclude Include="wilcze_jagody.h" />
+    <ClInclude Include="wilk.h" />
     <ClInclude Include="world.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
