@@ -42,10 +42,11 @@ void BarszczSosnowskiego::action() {
 
 }
 
-void BarszczSosnowskiego::collision(Creature* creature) {
+bool BarszczSosnowskiego::collision(Creature* creature) {
 	if (creature->getType() != CYBER_OWCA) {
 		creature->kill();
 	}
+	return false;
 }
 
 void BarszczSosnowskiego::draw()

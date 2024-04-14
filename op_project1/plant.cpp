@@ -59,8 +59,8 @@ Plant::Plant(World* world) {
 void Plant::action() {
 }
 
-void Plant::collision(Creature* creature)
-{
+bool Plant::collision(Creature* creature) {
+	return true;
 }
 
 void Plant::draw()

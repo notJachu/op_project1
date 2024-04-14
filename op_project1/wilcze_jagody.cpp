@@ -21,8 +21,9 @@ void WilczeJagody::action()
 {
 }
 
-void WilczeJagody::collision(Creature* creature) {
+bool WilczeJagody::collision(Creature* creature) {
 	creature->kill();
+	return false;
 }
 
 void WilczeJagody::draw()

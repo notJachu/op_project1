@@ -7,7 +7,7 @@ class Trawa : public Plant {
 	Trawa(Point pos);
 	Trawa(World* world, Point pos);
 	void action() override;
-	void collision(Creature* creature) override;
+	bool collision(Creature* creature) override;
 	void draw() override;
 	~Trawa() override;
 };

@@ -137,6 +137,7 @@
     <ClCompile Include="owca.cpp" />
     <ClCompile Include="plant.cpp" />
     <ClCompile Include="trawa.cpp" />
+    <ClCompile Include="tutel.cpp" />
     <ClCompile Include="wilcze_jagody.cpp" />
     <ClCompile Include="wilk.cpp" />
     <ClCompile Include="world.cpp" />
@@ -151,6 +152,7 @@
     <ClInclude Include="owca.h" />
     <ClInclude Include="plant.h" />
     <ClInclude Include="trawa.h" />
+    <ClInclude Include="tutel.h" />
     <ClInclude Include="types.h" />
     <ClInclude Include="wilcze_jagody.h" />
     <ClInclude Include="wilk.h" />

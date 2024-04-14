@@ -15,7 +15,7 @@ public:
 	Animal(Point pos, World* world);
 	Animal();
 	void action() override;
-	void collision(Creature* creature) override;
+	bool collision(Creature* creature) override;
 	void draw() override;
 	void kill() override;
 	~Animal() override;

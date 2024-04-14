@@ -8,7 +8,7 @@ class Mlecz : public Plant {
 	Mlecz(Point pos);
 	Mlecz(World* world, Point pos);
 	void action() override;
-	void collision(Creature* creature) override;
+	bool collision(Creature* creature) override;
 	void draw() override;
 	~Mlecz() override;
 };

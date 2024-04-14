@@ -14,7 +14,7 @@ protected:
 	
 public:
   virtual void action() = 0;
-  virtual void collision(Creature* creature) = 0;
+  virtual bool collision(Creature* creature) = 0;
   virtual void draw() = 0;
   virtual void kill() = 0;
   // getters

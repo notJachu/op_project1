@@ -13,7 +13,7 @@ public:
 	Plant();
 	Plant(World* world);
 	void action() override;
-	void collision(Creature* creature) override;
+	bool collision(Creature* creature) override;
 	void draw() override;
 	void setWorld(World* world);
 	void kill() override;

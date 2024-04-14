@@ -22,9 +22,10 @@ void Guarana::action() {
 	plant_new(world, positions);
 }
 
-void Guarana::collision(Creature* creature) {
+bool Guarana::collision(Creature* creature) {
 	int power = creature->getPower();
 	creature->setPower(power + 3);
+	return true;
 }
 
 void Guarana::draw()

@@ -8,7 +8,7 @@ class Guarana : public Plant {
 	Guarana(Point pos);
 	Guarana(World* world, Point pos);
 	void action() override;
-	void collision(Creature* creature) override;
+	bool collision(Creature* creature) override;
 	void draw() override;
 	~Guarana() override;
 };

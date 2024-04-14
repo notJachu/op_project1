@@ -25,8 +25,8 @@ void Mlecz::action() {
 	}
 }
 
-void Mlecz::collision(Creature* creature)
-{
+bool Mlecz::collision(Creature* creature) {
+	return true;
 }
 
 void Mlecz::draw()

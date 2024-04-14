@@ -91,11 +91,15 @@ void Animal::action() {
 		}
 	}
 	else {
-		creature->collision(this);
+		bool res = creature->collision(this);
+		if (res) {
+			position = newPosition;
+			world->updateCreaturePosition(this->position, newPosition);
+		}
 	}
 }
 
-void Animal::collision(Creature* creature) {
+bool Animal::collision(Creature* creature) {
 	int pow = creature->getPower();
 
 	if (pow < this->power){
@@ -103,7 +107,9 @@ void Animal::collision(Creature* creature) {
 	}
 	else {
 		kill();
+		return true;
 	}
+	return false;
 }
 
 void Animal::draw()

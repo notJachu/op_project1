@@ -25,8 +25,8 @@ void Trawa::action() {
 	}
 }
 
-void Trawa::collision(Creature* creature)
-{
+bool Trawa::collision(Creature* creature) {
+	return true;
 }
 
 void Trawa::draw()
