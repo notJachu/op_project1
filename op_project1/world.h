@@ -10,6 +10,8 @@ private:
 	int array_size;
 	int width;
 	int height;
+	bool has_added_animal;
+	bool has_added_plant;
 	void init_array();
 
 public:
@@ -24,5 +26,7 @@ public:
 	void print(std::ostream& os) const;
 	void playTurn();
 	Point* get_free_neighbours(Point position);
+	void set_added_flag(int type, bool value); // 1 - animal	0 - plant
+	void sort_creatures();
 	void draw() const;
 };

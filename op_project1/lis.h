@@ -9,6 +9,5 @@ class Lis : public Animal {
 	Lis(World* world, Point pos);
 	void draw() override;
 	Point move() const override;
-	void print(std::ostream& os) const override;
 	~Lis() override;
 };

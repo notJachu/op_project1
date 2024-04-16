@@ -129,6 +129,10 @@ void World::print(std::ostream& os) const {
 
 void World::playTurn() {
 	int c = array_size;
+
+	// flag most likely obsolete
+	//has_added_animal = false;
+	sort_creatures();
 	for (int i = 0; i < c; i++) {
 		if (creatures[i] != nullptr) {
 			creatures[i]->action();
@@ -154,6 +158,30 @@ Point* World::get_free_neighbours(Point position) {
 		res[3] = { position.x, position.y + 1 };
 	}
 	return res;
+}
+
+void World::set_added_flag(int type, bool value) {
+	if (type == 0) {
+		has_added_animal = value;
+	}
+	else {
+		has_added_animal = value;
+	}
+}
+
+void World::sort_creatures() {
+	int i, key, j;
+	Creature* keyed;
+	for (int i = 1; i < creatureCount; i++) {
+		key = creatures[i]->getInitiative();
+		keyed = creatures[i];
+		j = i - 1;
+		while (j >= 0 && creatures[j]->getInitiative() < key) {
+			creatures[j + 1] = creatures[j];
+			j -= 1;
+		}
+		creatures[j + 1] = keyed;
+	}
 }
 
 void World::draw() const

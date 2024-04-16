@@ -22,9 +22,6 @@ void Owca::draw()
 {
 }
 
-void Owca::print(std::ostream& os) const
-{
-}
 
 Owca::~Owca()
 {

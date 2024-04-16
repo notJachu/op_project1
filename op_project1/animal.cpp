@@ -41,6 +41,7 @@ bool Animal::reproduce() {
 	for (int i = 0; i < 4; i++) {
 		if (positions[i].x != -1) {
 			world->addCreature(new Animal(power, initiative, 0, positions[i], world));
+			world->set_added_flag(1, true);
 			return true;
 		}
 	}

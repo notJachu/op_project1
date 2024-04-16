@@ -66,10 +66,6 @@ bool Tutel::collision(Creature* creature) {
 	}
 }
 
-void Tutel::print(std::ostream& os) const
-{
-}
-
 Tutel::~Tutel()
 {
 }

@@ -22,9 +22,6 @@ void Wilk::draw()
 {
 }
 
-void Wilk::print(std::ostream& os) const
-{
-}
 
 Wilk::~Wilk()
 {

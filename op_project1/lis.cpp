@@ -67,9 +67,6 @@ Point Lis::move() const {
 	return positions[direction];
 }
 
-void Lis::print(std::ostream& os) const
-{
-}
 
 Lis::~Lis()
 {
