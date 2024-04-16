@@ -5,6 +5,7 @@
 #include "plant.h"
 #include "trawa.h"
 #include "wilk.h"
+#include "antylopa.h"
 
 
 int main() {
