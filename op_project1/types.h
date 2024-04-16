@@ -5,7 +5,14 @@ typedef struct Point {
 	int y;
 } Point;
 
-
+enum event_type {
+	DEFEND,
+	KILL,
+	REPRODUCE,
+	EAT,
+	FLEE,
+	PLANT,
+};
 enum creature_type {
 	WILK,
 	LIS,
@@ -19,3 +26,7 @@ enum creature_type {
 	WILCZE_JAGODY,
 	BARSZCZ_SOSNOWSKIEGO,
 };
+
+void gotoxy(int x, int y);
+char get_symbol(creature_type type);
+const char* get_name(creature_type type);

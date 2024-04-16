@@ -138,6 +138,7 @@
     <ClCompile Include="plant.cpp" />
     <ClCompile Include="trawa.cpp" />
     <ClCompile Include="tutel.cpp" />
+    <ClCompile Include="types.cpp" />
     <ClCompile Include="wilcze_jagody.cpp" />
     <ClCompile Include="wilk.cpp" />
     <ClCompile Include="world.cpp" />

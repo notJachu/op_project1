@@ -17,6 +17,7 @@ public:
   virtual bool collision(Creature* creature) = 0;
   virtual void draw() = 0;
   virtual void kill() = 0;
+  void log_event(std::ostream& os, creature_type first, creature_type second, event_type event);
   // getters
   int getX();
   int getY();

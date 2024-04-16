@@ -18,55 +18,8 @@ void World::init_array() {
 	}
 }
 
-void World::gotoxy(int x, int y) {
-	COORD coords = { 0 , 0 };
-	coords.X = x;
-	coords.Y = y;
-	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coords);
-}
 
-char World::get_symbol(creature_type type) const {
-	switch (type)
-	{
-	case WILK:
-		return 'W';
-		break;
-	case LIS:
-		return 'L';
-		break;
-	case TUTEL:
-		return 'T';
-		break;
-	case ANTYLOPA:
-		return 'A';
-		break;
-	case OWCA:
-		return 'O';
-		break;
-	case CYBER_OWCA:
-		return 'C';
-		break;
-	case TRAWA:
-		return 't';
-		break;
-	case MLECZ:
-		return 'm';
-		break;
-	case GUARANA:
-		return 'g';
-		break;
-	case WILCZE_JAGODY:
-		return 'j';
-		break;
-	case BARSZCZ_SOSNOWSKIEGO:
-		return 'b';
-		break;
-	default:
-		return '*';
-		break;
-	}
-	return '*';
-}
+
 
 World::World() {
 	this->creatures = nullptr;
@@ -250,3 +203,5 @@ void World::draw() const {
 		
 	}
 }
+
+
