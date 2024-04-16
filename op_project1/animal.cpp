@@ -42,6 +42,8 @@ bool Animal::reproduce() {
 		if (positions[i].x != -1) {
 			world->addCreature(new Animal(power, initiative, 0, positions[i], world));
 			world->set_added_flag(1, true);
+			
+			log_event(std::cout, type, type, REPRODUCE);
 			return true;
 		}
 	}
@@ -104,9 +106,11 @@ bool Animal::collision(Creature* creature) {
 	int pow = creature->getPower();
 
 	if (pow < this->power){
+		log_event(std::cout, this->type, creature->getType(), DEFEND);
 		creature->kill();
 	}
 	else {
+		log_event(std::cout, creature->getType(), type, KILL);
 		kill();
 		return true;
 	}

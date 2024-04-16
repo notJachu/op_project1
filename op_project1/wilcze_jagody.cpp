@@ -22,6 +22,7 @@ void WilczeJagody::action()
 }
 
 bool WilczeJagody::collision(Creature* creature) {
+	log_event(std::cout, creature->getType(), type, KILL);
 	creature->kill();
 	return false;
 }

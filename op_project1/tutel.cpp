@@ -58,10 +58,12 @@ Point Tutel::move() const {
 
 bool Tutel::collision(Creature* creature) {
 	if (creature->getPower() < 5) {
+		log_event(std::cout, type, creature->getType(), DEFEND);
 		return false;
 	}
 	else {
 		kill();
+		log_event(std::cout, creature->getType(), type, KILL);
 		return true;
 	}
 }

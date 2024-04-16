@@ -22,21 +22,25 @@ void BarszczSosnowskiego::action() {
 
 	Creature* creature = world->getCreature(position.x - 1, position.y);
 	if (creature != nullptr && creature->getType() != CYBER_OWCA) {
+		log_event(std::cout, BARSZCZ_SOSNOWSKIEGO, creature->getType(), KILL);
 		creature->kill();
 	}
 
 	creature = world->getCreature(position.x + 1, position.y);
 	if (creature != nullptr && creature->getType() != CYBER_OWCA) {
+		log_event(std::cout, BARSZCZ_SOSNOWSKIEGO, creature->getType(), KILL);
 		creature->kill();
 	}
 
 	creature = world->getCreature(position.x, position.y - 1);
 	if (creature != nullptr && creature->getType() != CYBER_OWCA) {
+		log_event(std::cout, BARSZCZ_SOSNOWSKIEGO, creature->getType(), KILL);
 		creature->kill();
 	}
 
 	creature = world->getCreature(position.x, position.y + 1);
 	if (creature != nullptr && creature->getType() != CYBER_OWCA) {
+		log_event(std::cout, BARSZCZ_SOSNOWSKIEGO, creature->getType(), KILL);
 		creature->kill();
 	}
 
@@ -44,7 +48,9 @@ void BarszczSosnowskiego::action() {
 
 bool BarszczSosnowskiego::collision(Creature* creature) {
 	if (creature->getType() != CYBER_OWCA) {
+		log_event(std::cout, BARSZCZ_SOSNOWSKIEGO, creature->getType(), KILL);
 		creature->kill();
+		return false;
 	}
 	return false;
 }

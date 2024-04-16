@@ -21,11 +21,13 @@ void Plant::plant_new(World* world, Point* positions) {
 	int pos = rand() % 4;
 	if (positions[pos].x != -1) {
 		world->addCreature(new Plant(power, initiative, 0, positions[pos], world));
+		log_event(std::cout, type, type, PLANT);
 	}
 	else {
 		for (int i = 0; i < 4; i++) {
 			if (positions[i].x != -1) {
 				world->addCreature(new Plant(power, initiative, 0, positions[i], world));
+				log_event(std::cout, type, type, PLANT);
 				break;
 			}
 		}
@@ -60,6 +62,7 @@ void Plant::action() {
 }
 
 bool Plant::collision(Creature* creature) {
+	log_event(std::cout, creature->getType(), type, EAT);
 	return true;
 }
 

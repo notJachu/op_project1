@@ -26,6 +26,7 @@ void Trawa::action() {
 }
 
 bool Trawa::collision(Creature* creature) {
+	log_event(std::cout, creature->getType(), type, EAT);
 	return true;
 }
 

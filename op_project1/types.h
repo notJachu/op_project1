@@ -12,6 +12,7 @@ enum event_type {
 	EAT,
 	FLEE,
 	PLANT,
+	MOVE
 };
 enum creature_type {
 	WILK,

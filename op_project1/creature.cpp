@@ -29,6 +29,9 @@ void Creature::log_event(std::ostream& os, creature_type first, creature_type se
 	case PLANT:
 		os << a1 << " has replanted" << std::endl;
 		break;
+	case MOVE:
+		os << a1 << " has moved" << std::endl;
+		break;
 	default:
 		os << "Unknown event\n";
 		break;

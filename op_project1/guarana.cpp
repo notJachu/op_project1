@@ -25,6 +25,7 @@ void Guarana::action() {
 bool Guarana::collision(Creature* creature) {
 	int power = creature->getPower();
 	creature->setPower(power + 3);
+	log_event(std::cout, creature->getType(), type, EAT);
 	return true;
 }
 
