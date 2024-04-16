@@ -1,5 +1,6 @@
 #include "world.h"
 #include "types.h"
+#include "Windows.h"
 
 void World::init_array() {
 	creatures = new Creature*[20];
@@ -15,6 +16,56 @@ void World::init_array() {
 	for (int i = 0; i < width * height; i++) {
 		world_map[i] = nullptr;
 	}
+}
+
+void World::gotoxy(int x, int y) {
+	COORD coords = { 0 , 0 };
+	coords.X = x;
+	coords.Y = y;
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coords);
+}
+
+char World::get_symbol(creature_type type) const {
+	switch (type)
+	{
+	case WILK:
+		return 'W';
+		break;
+	case LIS:
+		return 'L';
+		break;
+	case TUTEL:
+		return 'T';
+		break;
+	case ANTYLOPA:
+		return 'A';
+		break;
+	case OWCA:
+		return 'O';
+		break;
+	case CYBER_OWCA:
+		return 'C';
+		break;
+	case TRAWA:
+		return 't';
+		break;
+	case MLECZ:
+		return 'm';
+		break;
+	case GUARANA:
+		return 'g';
+		break;
+	case WILCZE_JAGODY:
+		return 'j';
+		break;
+	case BARSZCZ_SOSNOWSKIEGO:
+		return 'b';
+		break;
+	default:
+		return '*';
+		break;
+	}
+	return '*';
 }
 
 World::World() {
@@ -184,6 +235,18 @@ void World::sort_creatures() {
 	}
 }
 
-void World::draw() const
-{
+void World::draw() const {
+	for (int i = 0; i < width; i++) {
+		for (int j = 0; j < height; j++) {
+			if (world_map[(width * j) + i] == nullptr) {
+				std::cout << "*";
+			}
+			else {
+				creature_type type = world_map[(width * j) + i]->getType();
+				std::cout << get_symbol(type);
+			}
+		}
+		std::cout << std::endl;
+		
+	}
 }

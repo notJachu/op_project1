@@ -20,5 +20,6 @@ int main() {
 	//Creature* creature = world.getCreature(3, 3);
 	//world.removeCreature(creature);
 	//creature->kill();
+	world.draw();
 	return 0;
 }

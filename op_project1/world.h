@@ -13,6 +13,8 @@ private:
 	bool has_added_animal;
 	bool has_added_plant;
 	void init_array();
+	void gotoxy(int x, int y);
+	char get_symbol(creature_type type) const;
 
 public:
 	World();
