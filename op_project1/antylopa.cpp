@@ -42,6 +42,10 @@ Antylopa::Antylopa(World* world, Point pos) {
 	this->world = world;
 }
 
+Creature* Antylopa::create(World* world, Point pos) {
+	return new Antylopa(world, pos);
+}
+
 void Antylopa::draw()
 {
 }

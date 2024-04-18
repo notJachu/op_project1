@@ -18,6 +18,10 @@ Tutel::Tutel(World* world, Point pos) {
 	this->world = world;
 }
 
+Creature* Tutel::create(World* world, Point pos) {
+	return new Tutel(world, pos);
+}
+
 void Tutel::draw()
 {
 }

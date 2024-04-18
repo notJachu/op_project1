@@ -18,6 +18,10 @@ Lis::Lis(World* world, Point pos) {
 	this->world = world;
 }
 
+Creature* Lis::create(World* world, Point pos) {
+	return new Lis(world, pos);
+}
+
 void Lis::draw()
 {
 }

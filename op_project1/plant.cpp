@@ -6,7 +6,7 @@ void Plant::print(std::ostream& os) const {
 	os << "Plant: power=" << power << " initiative=" << initiative << " age=" << age << " position=(" << position.x << "," << position.y << ")";
 }
 
-void Plant::plant_new(World* world, Point* positions) {
+ void Plant::plant_new(World* world, Point* positions) {
 	srand(time(NULL));
 
 	// 50% chance to plant
@@ -20,13 +20,17 @@ void Plant::plant_new(World* world, Point* positions) {
 	// if it can't plant there it picks first free position
 	int pos = rand() % 4;
 	if (positions[pos].x != -1) {
-		world->addCreature(new Plant(power, initiative, 0, positions[pos], world));
+		//std::cout << this->type << std::endl;
+		Creature* creature = this->create(world, positions[pos]);
+		world->addCreature(creature);
 		log_event(std::cout, type, type, PLANT);
 	}
 	else {
 		for (int i = 0; i < 4; i++) {
 			if (positions[i].x != -1) {
-				world->addCreature(new Plant(power, initiative, 0, positions[i], world));
+				//std::cout << this->type << std::endl;
+				Creature* creature = this->create(world, positions[i]);
+				world->addCreature(creature);
 				log_event(std::cout, type, type, PLANT);
 				break;
 			}
@@ -64,6 +68,10 @@ void Plant::action() {
 bool Plant::collision(Creature* creature) {
 	log_event(std::cout, creature->getType(), type, EAT);
 	return true;
+}
+
+Creature* Plant::create(World* world, Point pos) {
+	return nullptr;
 }
 
 void Plant::draw()

@@ -2,6 +2,7 @@
 #include <iostream>
 #include "types.h"
 
+
 class Creature {
 protected:
 	int power;

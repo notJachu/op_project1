@@ -2,6 +2,8 @@
 #include "creature.h"
 #include "types.h"
 
+class World;
+
 class World {
 private:
 	Creature** creatures;

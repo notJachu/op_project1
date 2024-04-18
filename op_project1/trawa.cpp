@@ -17,6 +17,10 @@ Trawa::Trawa(World* world, Point pos) {
 	this->world = world;
 }
 
+Creature* Trawa::create(World* world, Point pos) {
+	return new Trawa(world, pos);
+}
+
 void Trawa::action() {
 	Point* positions = world->get_free_neighbours(this->position);
 	plant_new(world, positions);

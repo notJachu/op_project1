@@ -18,6 +18,10 @@ Owca::Owca(World* world, Point pos) {
 	this->world = world;
 }
 
+Creature* Owca::create(World* world, Point pos) {
+	return new Owca(world, pos);
+}
+
 void Owca::draw()
 {
 }

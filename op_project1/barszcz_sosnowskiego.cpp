@@ -18,6 +18,10 @@ BarszczSosnowskiego::BarszczSosnowskiego(World* world, Point pos) {
 	this->world = world;
 }
 
+Creature* BarszczSosnowskiego::create(World* world, Point pos) { 
+	return new BarszczSosnowskiego(world, pos);
+}
+
 void BarszczSosnowskiego::action() {
 
 	Creature* creature = world->getCreature(position.x - 1, position.y);

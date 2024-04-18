@@ -18,6 +18,10 @@ Wilk::Wilk(World* world, Point pos) {
 	this->world = world;
 }
 
+Creature* Wilk::create(World* world, Point pos) {
+	return new Wilk(world, pos);
+}
+
 void Wilk::draw()
 {
 }

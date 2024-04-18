@@ -17,6 +17,10 @@ Mlecz::Mlecz(World* world, Point pos) {
 	this->world = world;
 }
 
+Creature* Mlecz::create(World* world, Point pos) {
+	return new Mlecz(world, pos);
+}
+
 void Mlecz::action() {
 	// 3 attempts to plant new Mlecz	
 	for (int i = 0; i < 3; i++) {

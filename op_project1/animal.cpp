@@ -40,7 +40,7 @@ bool Animal::reproduce() {
 
 	for (int i = 0; i < 4; i++) {
 		if (positions[i].x != -1) {
-			world->addCreature(new Animal(power, initiative, 0, positions[i], world));
+			world->addCreature(this->create(world, positions[i]));
 			world->set_added_flag(1, true);
 			
 			log_event(std::cout, type, type, REPRODUCE);
@@ -76,6 +76,10 @@ Animal::Animal() {
 	this->age = 0;
 	this->position = { 0,0 };
 	this->world = nullptr;
+}
+
+Creature* Animal::create(World* world, Point pos) {
+	return nullptr;
 }
 
 void Animal::action() {

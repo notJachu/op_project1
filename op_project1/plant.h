@@ -14,6 +14,7 @@ public:
 	Plant(World* world);
 	void action() override;
 	bool collision(Creature* creature) override;
+	virtual Creature* create(World* world, Point pos);
 	void draw() override;
 	void setWorld(World* world);
 	void kill() override;

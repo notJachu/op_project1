@@ -17,6 +17,10 @@ WilczeJagody::WilczeJagody(World* world, Point pos) {
 	this->world = world;
 }
 
+Creature* WilczeJagody::create(World* world, Point pos) {
+	return new WilczeJagody(world, pos);
+}
+
 void WilczeJagody::action()
 {
 }

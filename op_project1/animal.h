@@ -14,6 +14,7 @@ public:
 	Animal(int power, int initiative, int age, Point position, World* world);
 	Animal(Point pos, World* world);
 	Animal();
+	virtual Creature* create(World* world, Point pos);
 	void action() override;
 	bool collision(Creature* creature) override;
 	void draw() override;
