@@ -68,6 +68,10 @@ bool Tutel::collision(Creature* creature) {
 	}
 }
 
+void Tutel::print(std::ostream& os) const {
+	os << "Tutel: power=" << power << " initiative=" << initiative << " age=" << age << " position=(" << position.x << "," << position.y << ")";
+}
+
 Tutel::~Tutel()
 {
 }

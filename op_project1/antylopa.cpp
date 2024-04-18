@@ -124,7 +124,7 @@ Point Antylopa::move() const {
 }
 
 bool Antylopa::collision(Creature* creature) {
-	bool will_run = will_run();
+	bool will_run = run();
 	if (will_run) return true;
 
 	int pow = creature->getPower();
@@ -139,8 +139,8 @@ bool Antylopa::collision(Creature* creature) {
 	return false;
 }
 
-void Antylopa::print(std::ostream& os) const
-{
+void Antylopa::print(std::ostream& os) const {
+	os << "Antylopa: power=" << power << " initiative=" << initiative << " age=" << age << " position=(" << position.x << "," << position.y << ")";
 }
 
 Antylopa::~Antylopa()

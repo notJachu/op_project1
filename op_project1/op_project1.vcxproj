@@ -128,6 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="animal.cpp" />
+    <ClCompile Include="antylopa.cpp" />
     <ClCompile Include="barszcz_sosnowskiego.cpp" />
     <ClCompile Include="creature.cpp" />
     <ClCompile Include="guarana.cpp" />
@@ -145,6 +146,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="animal.h" />
+    <ClInclude Include="antylopa.h" />
     <ClInclude Include="barszcz_sosnowskiego.h" />
     <ClInclude Include="creature.h" />
     <ClInclude Include="guarana.h" />

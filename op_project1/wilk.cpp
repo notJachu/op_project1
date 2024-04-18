@@ -22,6 +22,10 @@ void Wilk::draw()
 {
 }
 
+void Wilk::print(std::ostream& os) const {
+	os << "Wilk: power=" << power << " initiative=" << initiative << " age=" << age << " position=(" << position.x << "," << position.y << ")";
+}
+
 
 Wilk::~Wilk()
 {

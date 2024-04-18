@@ -10,5 +10,6 @@ class Tutel : public Animal {
 	void draw() override;
 	Point move() const override;
 	bool collision(Creature* creature) override;
+	void print(std::ostream& os) const override;
 	~Tutel() override;
 };

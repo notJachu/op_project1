@@ -22,6 +22,10 @@ void Owca::draw()
 {
 }
 
+void Owca::print(std::ostream& os) const {
+	os << "Owca: power=" << power << " initiative=" << initiative << " age=" << age << " position=(" << position.x << "," << position.y << ")";
+}
+
 
 Owca::~Owca()
 {

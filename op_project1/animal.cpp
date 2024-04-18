@@ -85,8 +85,8 @@ void Animal::action() {
 
 	Creature* creature = world->getCreature(newPosition.x, newPosition.y);
 	if (creature == nullptr) {
-		position = newPosition;
 		world->updateCreaturePosition(this->position, newPosition);
+		position = newPosition;
 	}
 	else if (creature->getType() == this->type) {
 		if (!reproduce()) {
@@ -96,8 +96,8 @@ void Animal::action() {
 	else {
 		bool res = creature->collision(this);
 		if (res) {
-			position = newPosition;
 			world->updateCreaturePosition(this->position, newPosition);
+			position = newPosition;
 		}
 	}
 }

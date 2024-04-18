@@ -56,7 +56,7 @@ void World::addCreature(Creature* creature) {
 
 		int x = creature->getX();
 		int y = creature->getY();
-		world_map[(width * (y - 1)) + x - 1] = creature;
+		world_map[(width * y) + x] = creature;
 		creatures[0] = creature;
 		creatureCount = 1;
 	}
@@ -68,13 +68,16 @@ void World::addCreature(Creature* creature) {
 		  delete[] creatures;
 		  creatures = temp;
 		  creatures[creatureCount] = creature;
+		  int x = creature->getX();
+		  int y = creature->getY();
+		  world_map[(width * y) + x] = creature;
 		  creatureCount++;
 		  array_size *= 2;
 	}
 	else {
 		int x = creature->getX();
 		int y = creature->getY();
-		world_map[(width * (y - 1)) + x - 1] = creature;
+		world_map[(width * y) + x] = creature;
 		creatures[creatureCount] = creature;
 		creatureCount++;
 	}
@@ -85,32 +88,35 @@ void World::removeCreature(Creature* creature) {
 		return;
 	}
 	int index = creature->getX() + (creature->getY() - 1) * width - 1;
+	delete world_map[index];
 	world_map[index] = nullptr;
 	for (int i = 0; i < creatureCount; i++) {
 		if (creatures[i] == creature) {
+			delete creatures[i];
 			creatures[i] = nullptr;
 			creatures[i] = creatures[creatureCount - 1];
 			creatureCount--;
 			break;
 		}
 	}
-	delete creature;
+	//delete creature;
 	creature = nullptr;
 }
 
 void World::updateCreaturePosition(Point position, Point target) {
-	int index_now = position.x + (position.y - 1) * width - 1;
-	int index_target = target.x + (target.y - 1) * width - 1;
+	int index_now = position.x + (position.y * width);
+	int index_target = target.x + (target.y * width);
 	world_map[index_target] = world_map[index_now];
 	world_map[index_now] = nullptr;
+	std::cout << *(world_map[index_target]) << std::endl;
 }
 
 Creature* World::getCreature(int x, int y) {
-	int index = x + (y - 1) * width - 1;
+	int index = x + (y * width);
 	if (index < 0 || index >= width * height) {
 		return nullptr;
 	}
-	return world_map[(width * (y - 1)) + x - 1];
+	return world_map[index];
 }
 
 int World::getWidth() const
@@ -132,7 +138,7 @@ void World::print(std::ostream& os) const {
 }
 
 void World::playTurn() {
-	int c = array_size;
+	int c = creatureCount;
 
 	// flag most likely obsolete
 	//has_added_animal = false;
@@ -149,16 +155,23 @@ Point* World::get_free_neighbours(Point position) {
 	for (int i = 0; i < 4; i++) {
 		res[i] = { -1 , -1 };	// not a valid position
 	}
-	if (position.x > 0 && world_map[((width * (position.y - 1)) + position.x - 1) - 1] == nullptr) {
+	int index = position.x - 1 + (position.y * width);
+	if (position.x > 0 && world_map[index] == nullptr) {
 		res[0] = { position.x - 1, position.y };
 	}
-	if (position.x < width - 1 && world_map[((width * (position.y - 1)) + position.x - 1) + 1] == nullptr) {
+
+	index = position.x + 1 + (position.y * width);
+	if (position.x < width - 1 && world_map[index] == nullptr) {
 		res[1] = { position.x + 1, position.y };
 	}
-	if (position.y > 0 && world_map[((width * (position.y - 1)) + position.x - 1) - width] == nullptr) {
+
+	index = position.x + ((position.y - 1) * width);
+	if (position.y > 0 && world_map[index] == nullptr) {
 		res[2] = { position.x, position.y - 1 };
 	}
-	if (position.y < height - 1 && world_map[((width * (position.y - 1)) + position.x - 1) + width] == nullptr) {
+
+	index = position.x + ((position.y + 1) * width);
+	if (position.y < height - 1 && world_map[index] == nullptr) {
 		res[3] = { position.x, position.y + 1 };
 	}
 	return res;
@@ -191,11 +204,11 @@ void World::sort_creatures() {
 void World::draw() const {
 	for (int i = 0; i < width; i++) {
 		for (int j = 0; j < height; j++) {
-			if (world_map[(width * j) + i] == nullptr) {
+			if (world_map[(width * i) + j] == nullptr) {
 				std::cout << "*";
 			}
 			else {
-				creature_type type = world_map[(width * j) + i]->getType();
+				creature_type type = world_map[(width * i) + j]->getType();
 				std::cout << get_symbol(type);
 			}
 		}

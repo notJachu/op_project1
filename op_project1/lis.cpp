@@ -67,6 +67,10 @@ Point Lis::move() const {
 	return positions[direction];
 }
 
+void Lis::print(std::ostream& os) const {
+	os << "Lis: power=" << power << " initiative=" << initiative << " age=" << age << " position=(" << position.x << "," << position.y << ")";
+}
+
 
 Lis::~Lis()
 {
