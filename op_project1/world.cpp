@@ -130,7 +130,7 @@ int World::getHeight() const
 }
 
 void World::print(std::ostream& os) const {
-	for (int i = 0; i < array_size; i++) {
+	for (int i = 0; i < creatureCount; i++) {
 		if (creatures[i] != nullptr) {
 			os << *creatures[i] << std::endl;
 		}
@@ -143,9 +143,16 @@ void World::playTurn() {
 	// flag most likely obsolete
 	//has_added_animal = false;
 	sort_creatures();
+
 	for (int i = 0; i < c; i++) {
 		if (creatures[i] != nullptr) {
 			creatures[i]->action();
+		}
+	}
+	// loop twice so age increments at the same time
+	for (int i = 0; i < c; i++) {
+		if (creatures[i] != nullptr) {
+			creatures[i]->increment_age();
 		}
 	}
 }

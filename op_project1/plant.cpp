@@ -9,9 +9,9 @@ void Plant::print(std::ostream& os) const {
  void Plant::plant_new(World* world, Point* positions) {
 	srand(time(NULL));
 
-	// 50% chance to plant
+	// 25% chance to plant
 	int will_plant = rand() % 100;
-	if (will_plant < 50) {
+	if (will_plant < 25) {
 		return;
 	}
 

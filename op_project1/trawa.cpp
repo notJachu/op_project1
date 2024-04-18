@@ -24,9 +24,9 @@ Creature* Trawa::create(World* world, Point pos) {
 void Trawa::action() {
 	Point* positions = world->get_free_neighbours(this->position);
 	plant_new(world, positions);
-	for (int i = 0; i < 4; i++) {
+	/*for (int i = 0; i < 4; i++) {
 		std::cout<< positions[i].x << " " << positions[i].y << std::endl;
-	}
+	}*/
 }
 
 bool Trawa::collision(Creature* creature) {

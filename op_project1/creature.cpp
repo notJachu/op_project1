@@ -82,5 +82,9 @@ void Creature::setAge(int age) {
 	this->age = age;
 }
 
+void Creature::increment_age() {
+	this->age++;
+}
+
 Creature::~Creature() {
 }

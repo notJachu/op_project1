@@ -33,5 +33,6 @@ public:
   void setPower(int power);
   void setInitiative(int initiative);
   void setAge(int age);
+  void increment_age();
   virtual ~Creature();
 };
