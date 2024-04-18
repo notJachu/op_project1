@@ -26,6 +26,7 @@ enum creature_type {
 	GUARANA,
 	WILCZE_JAGODY,
 	BARSZCZ_SOSNOWSKIEGO,
+	STUDENT
 };
 
 void gotoxy(int x, int y);

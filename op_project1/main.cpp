@@ -10,6 +10,7 @@
 #include "mlecz.h"
 #include "barszcz_sosnowskiego.h"
 #include "tutel.h"
+#include "Cz³owiek.h"
 
 
 
@@ -21,6 +22,7 @@ int main() {
 	world.addCreature(new Trawa(&world, { 3 , 5 }));
 	world.addCreature(new Antylopa(&world, { 5 , 5 }));
 	world.addCreature(new Guarana(&world, { 1, 2 }));
+	world.addCreature(new Cz³owiek(&world, { 10, 10 }));
 	world.print(std::cout);
 	world.draw();
 

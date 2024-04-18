@@ -45,6 +45,9 @@ char get_symbol(creature_type type) {
 	case BARSZCZ_SOSNOWSKIEGO:
 		return 'b';
 		break;
+	case STUDENT:
+		return 'S';
+		break;
 	default:
 		return '*';
 		break;
@@ -88,6 +91,9 @@ const char* get_name(creature_type type) {
 			break;
 		case BARSZCZ_SOSNOWSKIEGO:
 			return "Barszcz Sosnowskiego";
+			break;
+		case STUDENT:
+			return "Student";
 			break;
 	   default:
 		   return "";
