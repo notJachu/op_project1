@@ -1,13 +1,9 @@
 #include "Cz這wiek.h"
 #include "World.h"
 #include "stdio.h"
+#include "types.h"
 #include <iostream>
 
-#define KEY_UP 72
-#define KEY_DOWN 80
-#define KEY_LEFT 75
-#define KEY_RIGHT 77
-#define KEY_PRE 224
 
 Cz這wiek::Cz這wiek(int power, int initiative, int age, Point position, World* world) {
 	this->power = power;
@@ -44,42 +40,36 @@ Point Cz這wiek::move() const {
 }
 
 void Cz這wiek::action() {
-	int c = 0;
+	direction dir = world->get_player_input();
 
-	switch (c = _getwch()) {
-	case KEY_UP:
-		//std::cout << std::endl << "Up" << std::endl;	//key up
-		if (position.x - 1 >= 0) {
-			world->updateCreaturePosition(this->position, { position.x - 1, position.y });
-			position.x--;
-		}
+	switch (dir)
+	{
+	case LEFT: if (position.x - 1 >= 0) {
+		world->updateCreaturePosition(this->position, { position.x - 1, position.y });
+		position.x--;
+	}
 		break;
-	case KEY_DOWN:
-		//std::cout << std::endl << "Down" << std::endl;   // key down
+	case RIGHT:
 		if (position.x + 1 < world->getHeight()) {
 			world->updateCreaturePosition(this->position, { position.x + 1, position.y });
 			position.x++;
 		}
 		break;
-	case KEY_LEFT:
-		//std::cout << std::endl << "Left" << std::endl;  // key left
+	case UP:
 		if (position.y - 1 >= 0) {
 			world->updateCreaturePosition(this->position, { position.x, position.y - 1 });
 			position.y--;
 		}
 		break;
-	case KEY_RIGHT:
-		//std::cout << std::endl << "Right" << std::endl;  // key right
+	case DOWN:
 		if (position.y + 1 < world->getWidth()) {
 			world->updateCreaturePosition(this->position, { position.x, position.y + 1 });
 			position.y++;
 		}
 		break;
 	default:
-		//std::cout << std::endl << "null" << std::endl;  // not arrow
 		break;
 	}
-
 	
 }
 

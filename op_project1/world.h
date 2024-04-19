@@ -15,6 +15,7 @@ private:
 	bool has_added_animal;
 	bool has_added_plant;
 	void init_array();
+	direction player_input;
 
 public:
 	World();
@@ -27,6 +28,8 @@ public:
 	int getHeight() const;
 	void print(std::ostream& os) const;
 	void playTurn();
+	void read_player_input();
+	direction get_player_input();
 	Point* get_free_neighbours(Point position);
 	void set_added_flag(int type, bool value); // 1 - animal	0 - plant
 	void sort_creatures();

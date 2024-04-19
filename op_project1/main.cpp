@@ -19,9 +19,10 @@ int main() {
 	World world;
 	world.addCreature(new Trawa(&world, {3 , 3}));
 	world.addCreature(new Wilk(&world, { 1, 1 }));
+	world.addCreature(new Wilk(&world, { 1, 2 }));
 	world.addCreature(new Trawa(&world, { 3 , 5 }));
 	world.addCreature(new Antylopa(&world, { 5 , 5 }));
-	world.addCreature(new Guarana(&world, { 1, 2 }));
+	world.addCreature(new Guarana(&world, { 1, 4 }));
 	world.addCreature(new Cz³owiek(&world, { 10, 10 }));
 	world.print(std::cout);
 	world.draw();

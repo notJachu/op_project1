@@ -2,6 +2,13 @@
 #include "types.h"
 #include "Windows.h"
 
+#define KEY_UP 72
+#define KEY_DOWN 80
+#define KEY_LEFT 75
+#define KEY_RIGHT 77
+#define KEY_PRE 224
+
+
 void World::init_array() {
 	creatures = new Creature*[20];
 	array_size = 20;
@@ -27,6 +34,7 @@ World::World() {
 	this->array_size = 0;
 	this->width = 0;
 	this->height = 0;
+	player_input = UP;
 	init_array();
 }
 
@@ -87,12 +95,12 @@ void World::removeCreature(Creature* creature) {
 	if (creature == nullptr) {
 		return;
 	}
-	int index = creature->getX() + (creature->getY() - 1) * width - 1;
+	int index = creature->getX() + (creature->getY() * width);
 	delete world_map[index];
 	world_map[index] = nullptr;
 	for (int i = 0; i < creatureCount; i++) {
 		if (creatures[i] == creature) {
-			delete creatures[i];
+			//delete creatures[i];	   // already deleted
 			creatures[i] = nullptr;
 			creatures[i] = creatures[creatureCount - 1];
 			creatureCount--;
@@ -143,7 +151,8 @@ void World::playTurn() {
 	// flag most likely obsolete
 	//has_added_animal = false;
 	sort_creatures();
-
+	
+	read_player_input();
 	for (int i = 0; i < c; i++) {
 		if (creatures[i] != nullptr) {
 			creatures[i]->action();
@@ -155,6 +164,36 @@ void World::playTurn() {
 			creatures[i]->increment_age();
 		}
 	}
+}
+
+void World::read_player_input() {
+	int c = 0;
+
+	switch (c = _getwch()) {
+	case KEY_UP:
+		//std::cout << std::endl << "Up" << std::endl;	//key up
+		player_input = UP;
+		break;
+	case KEY_DOWN:
+		//std::cout << std::endl << "Down" << std::endl;   // key down
+		player_input = DOWN;
+		break;
+	case KEY_LEFT:
+		//std::cout << std::endl << "Left" << std::endl;  // key left
+		player_input = LEFT;
+		break;
+	case KEY_RIGHT:
+		//std::cout << std::endl << "Right" << std::endl;  // key right
+		player_input = RIGHT;
+		break;
+	default:
+		//std::cout << std::endl << "null" << std::endl;  // not arrow
+		break;
+	}
+}
+
+direction World::get_player_input(){
+	return player_input;
 }
 
 Point* World::get_free_neighbours(Point position) {

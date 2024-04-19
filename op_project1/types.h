@@ -29,6 +29,13 @@ enum creature_type {
 	STUDENT
 };
 
+enum direction {
+	UP,
+	DOWN,
+	LEFT,
+	RIGHT
+};
+
 void gotoxy(int x, int y);
 char get_symbol(creature_type type);
 const char* get_name(creature_type type);
