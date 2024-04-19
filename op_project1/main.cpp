@@ -30,8 +30,9 @@ int main() {
 
 	for (int i = 0; i < 10; i++) {
 		world.playTurn();
+		std::cout << std::endl;
 		world.draw();
-		world.print(std::cout);
+		//world.print(std::cout);
 	}
 
 	//world.playTurn();

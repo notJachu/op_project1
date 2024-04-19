@@ -118,7 +118,7 @@ void World::updateCreaturePosition(Point position, Point target) {
 	int index_target = target.x + (target.y * width);
 	world_map[index_target] = world_map[index_now];
 	world_map[index_now] = nullptr;
-	std::cout << *(world_map[index_target]) << std::endl;
+	//std::cout << *(world_map[index_target]) << std::endl;
 }
 
 Creature* World::getCreature(int x, int y) {
@@ -163,6 +163,8 @@ void World::playTurn() {
 	sort_creatures();
 	
 	read_player_input();
+	system("cls");
+	std::cout << "OP projekt 1 - 197741 Jan St¹siek" << std::endl;
 	for (int i = 0; i < c; i++) {
 		if (creatures[i] != nullptr) {
 			creatures[i]->action();
