@@ -16,6 +16,7 @@ private:
 	bool has_added_plant;
 	void init_array();
 	direction player_input;
+	int player_ability;
 
 public:
 	World();
@@ -26,6 +27,8 @@ public:
 	Creature* getCreature(int x, int y);
 	int getWidth() const;
 	int getHeight() const;
+	int getPlayerAbility() const;
+	void setPlayerAbility(int value);
 	void print(std::ostream& os) const;
 	void playTurn();
 	void read_player_input();

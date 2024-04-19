@@ -12,8 +12,6 @@ Cz這wiek::Cz這wiek(int power, int initiative, int age, Point position, World* wo
 	this->position = position;
 	this->type = STUDENT;
 	this->world = world;
-	this->cooldown = 0;
-	this->superpower = false;
 }
 
 Cz這wiek::Cz這wiek(World* world, Point pos) {
@@ -23,8 +21,6 @@ Cz這wiek::Cz這wiek(World* world, Point pos) {
 	this->position = pos;
 	this->type = STUDENT;
 	this->world = world;
-	this->cooldown = 0;
-	this->superpower = false;
 }
 
 Creature* Cz這wiek::create(World* world, Point pos) {
@@ -40,6 +36,17 @@ Point Cz這wiek::move() const {
 }
 
 void Cz這wiek::action() {
+	int ability = world->getPlayerAbility();
+	if (ability == 0) {
+		power += 5;
+	}
+	if (ability < 0 && ability >= -5 ) {
+		power -= 1;	
+	}
+	if (ability > -10) {
+		world->setPlayerAbility(ability - 1);
+	}
+
 	direction dir = world->get_player_input();
 
 	switch (dir)

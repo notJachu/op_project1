@@ -3,10 +3,6 @@
 #include "animal.h"
 
 class Cz³owiek : public Animal {
-private:
-	int cooldown;
-	bool superpower;
-
 
 	public:
 	Cz³owiek(int power, int initiative, int age, Point position, World* world);

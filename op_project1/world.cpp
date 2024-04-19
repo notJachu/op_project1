@@ -7,6 +7,7 @@
 #define KEY_LEFT 75
 #define KEY_RIGHT 77
 #define KEY_PRE 224
+#define ABILITY 112
 
 
 void World::init_array() {
@@ -34,7 +35,8 @@ World::World() {
 	this->array_size = 0;
 	this->width = 0;
 	this->height = 0;
-	player_input = UP;
+	this->player_input = UP;
+	this->player_ability = -10;
 	init_array();
 }
 
@@ -137,6 +139,14 @@ int World::getHeight() const
 	return this->height;
 }
 
+int World::getPlayerAbility() const {
+	return player_ability;
+}
+
+void World::setPlayerAbility(int value) {
+	player_ability = value;
+}
+
 void World::print(std::ostream& os) const {
 	for (int i = 0; i < creatureCount; i++) {
 		if (creatures[i] != nullptr) {
@@ -169,27 +179,42 @@ void World::playTurn() {
 void World::read_player_input() {
 	int c = 0;
 
-	switch (c = _getwch()) {
-	case KEY_UP:
-		//std::cout << std::endl << "Up" << std::endl;	//key up
-		player_input = UP;
-		break;
-	case KEY_DOWN:
-		//std::cout << std::endl << "Down" << std::endl;   // key down
-		player_input = DOWN;
-		break;
-	case KEY_LEFT:
-		//std::cout << std::endl << "Left" << std::endl;  // key left
-		player_input = LEFT;
-		break;
-	case KEY_RIGHT:
-		//std::cout << std::endl << "Right" << std::endl;  // key right
-		player_input = RIGHT;
-		break;
-	default:
-		//std::cout << std::endl << "null" << std::endl;  // not arrow
-		break;
-	}
+	while (true) {
+		switch (c = _getwch()) {
+		case KEY_UP:
+			//std::cout << std::endl << "Up" << std::endl;	//key up
+			player_input = UP;
+			return;
+		case KEY_DOWN:
+			//std::cout << std::endl << "Down" << std::endl;   // key down
+			player_input = DOWN;
+			return;
+		case KEY_LEFT:
+			//std::cout << std::endl << "Left" << std::endl;  // key left
+			player_input = LEFT;
+			return;
+		case KEY_RIGHT:
+			//std::cout << std::endl << "Right" << std::endl;  // key right
+			player_input = RIGHT;
+			return;
+		case ABILITY:
+			if (player_ability < -5 && player_ability > -10) {
+				std::cout << "ON COOLDOWN" << std::endl;
+				break;
+			} else if (player_ability == -10) {
+				std::cout << "ABILITY USED" << std::endl;
+				player_ability = 0;
+				break;
+			} else {
+				std::cout << "ABILITY ALREADY ACTIVE" << std::endl;
+				break;
+			}
+		default:
+			//std::cout << std::endl << "null" << std::endl;  // not arrow
+			break;
+		}
+	} 
+	
 }
 
 direction World::get_player_input(){
