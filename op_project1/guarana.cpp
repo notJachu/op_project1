@@ -17,6 +17,15 @@ Guarana::Guarana(World* world, Point pos) {
 	this->world = world;
 }
 
+Guarana::Guarana(int power, int initiative, int age, Point position, World* world) {
+	this->power = power;
+	this->initiative = initiative;
+	this->age = age;
+	this->position = position;
+	this->type = GUARANA;
+	this->world = world;
+}
+
 Creature* Guarana::create(World* world, Point pos) {
 	return new Guarana(world, pos);
 }

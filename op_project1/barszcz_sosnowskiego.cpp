@@ -18,6 +18,15 @@ BarszczSosnowskiego::BarszczSosnowskiego(World* world, Point pos) {
 	this->world = world;
 }
 
+BarszczSosnowskiego::BarszczSosnowskiego(int power, int initiative, int age, Point position, World* world) {
+	this->power = power;
+	this->initiative = initiative;
+	this->age = age;
+	this->position = position;
+	this->type = BARSZCZ_SOSNOWSKIEGO;
+	this->world = world;
+}
+
 Creature* BarszczSosnowskiego::create(World* world, Point pos) { 
 	return new BarszczSosnowskiego(world, pos);
 }

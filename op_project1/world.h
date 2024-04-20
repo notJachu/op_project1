@@ -1,6 +1,8 @@
 #pragma once
 #include "creature.h"
 #include "types.h"
+#include <iostream>
+#include <fstream>
 
 class World;
 
@@ -14,12 +16,16 @@ private:
 	int height;
 	bool has_added_animal;
 	bool has_added_plant;
-	void init_array();
+	void init_array(int width, int height, int size);
 	direction player_input;
 	int player_ability;
+	std::fstream file;
 
 public:
 	World();
+	World(int width, int height);
+	World(std::fstream& in);
+	void save();
 	~World();
 	void addCreature(Creature* creature);
 	void removeCreature(Creature* creature);

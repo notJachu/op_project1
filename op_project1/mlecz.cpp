@@ -17,6 +17,15 @@ Mlecz::Mlecz(World* world, Point pos) {
 	this->world = world;
 }
 
+Mlecz::Mlecz(int power, int initiative, int age, Point position, World* world) {
+	this->power = power;
+	this->initiative = initiative;
+	this->age = age;
+	this->position = position;
+	this->type = MLECZ;
+	this->world = world;
+}
+
 Creature* Mlecz::create(World* world, Point pos) {
 	return new Mlecz(world, pos);
 }

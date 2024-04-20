@@ -17,6 +17,15 @@ Trawa::Trawa(World* world, Point pos) {
 	this->world = world;
 }
 
+Trawa::Trawa(int power, int initiative, int age, Point position, World* world) {
+	this->power = power;
+	this->initiative = initiative;
+	this->age = age;
+	this->position = position;
+	this->type = TRAWA;
+	this->world = world;
+}
+
 Creature* Trawa::create(World* world, Point pos) {
 	return new Trawa(world, pos);
 }

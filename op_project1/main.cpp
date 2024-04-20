@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include "world.h"
 #include "creature.h"
 #include "animal.h"
@@ -16,17 +17,21 @@
 
 
 int main() {
-	World world;
-	world.addCreature(new Trawa(&world, {3 , 3}));
-	world.addCreature(new Wilk(&world, { 1, 1 }));
-	world.addCreature(new Wilk(&world, { 1, 2 }));
-	world.addCreature(new Trawa(&world, { 3 , 5 }));
-	world.addCreature(new Antylopa(&world, { 5 , 5 }));
-	world.addCreature(new Guarana(&world, { 1, 4 }));
-	world.addCreature(new Cz³owiek(&world, { 10, 10 }));
-	world.print(std::cout);
-	world.draw();
+	//World world;
+	//world.addCreature(new Trawa(&world, {3 , 3}));
+	//world.addCreature(new Wilk(&world, { 1, 1 }));
+	//world.addCreature(new Wilk(&world, { 1, 2 }));
+	//world.addCreature(new Trawa(&world, { 3 , 5 }));
+	//world.addCreature(new Antylopa(&world, { 5 , 5 }));
+	//world.addCreature(new Guarana(&world, { 1, 4 }));
+	//world.addCreature(new Cz³owiek(&world, { 10, 10 }));
+	//world.print(std::cout);
+	//world.draw();
 
+	std::fstream file;
+	file.open("save.txt", std::ios::in);
+	World world(file);
+	file.close();
 
 	for (int i = 0; i < 10; i++) {
 		world.playTurn();

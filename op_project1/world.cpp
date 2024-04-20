@@ -1,6 +1,19 @@
 #include "world.h"
 #include "types.h"
 #include "Windows.h"
+#include "fstream"
+#include "wilk.h"
+#include "lis.h"
+#include "tutel.h"
+#include "antylopa.h"
+#include "owca.h"
+#include "trawa.h"
+#include "mlecz.h"
+#include "guarana.h"
+#include "Cz³owiek.h"
+#include "wilcze_jagody.h"
+#include "barszcz_sosnowskiego.h"
+
 
 #define KEY_UP 72
 #define KEY_DOWN 80
@@ -8,18 +21,20 @@
 #define KEY_RIGHT 77
 #define KEY_PRE 224
 #define ABILITY 112
+#define SAVE 115
+#define SAVE_FILE "save.txt"
 
 
-void World::init_array() {
-	creatures = new Creature*[20];
-	array_size = 20;
+void World::init_array(int width, int height, int size) {
+	creatures = new Creature*[size];
+	this->array_size = size;
 	for (int i = 0; i < array_size; i++) {
 		creatures[i] = nullptr;
 	}
-	creatureCount = 0;
+	this->creatureCount = 0;
 
-	width = 20;
-	height = 20;
+	this->width = width;
+	this->height = height;
 	world_map = new Creature * [width * height];
 	for (int i = 0; i < width * height; i++) {
 		world_map[i] = nullptr;
@@ -37,7 +52,106 @@ World::World() {
 	this->height = 0;
 	this->player_input = UP;
 	this->player_ability = -10;
-	init_array();
+	init_array(20, 20, 20);
+}
+
+World::World(int width, int height) {
+	this->creatures = nullptr;
+	this->creatureCount = 0;
+	this->array_size = 0;
+	this->width = width;
+	this->height = height;
+	this->player_input = UP;
+	this->player_ability = -10;
+	init_array(width, height, 20);
+}
+
+World::World(std::fstream& in) {	
+	if (!in.is_open()) {
+		std::cout << "File not open" << std::endl;
+		this->creatures = nullptr;
+		this->creatureCount = 0;
+		this->array_size = 0;
+		this->width = width;
+		this->height = height;
+		this->player_input = UP;
+		this->player_ability = -10;
+		init_array(width, height, 20);
+	}
+	else {
+		in >> this->width >> this->height;
+		in >> this->array_size;
+		int creatures_c;
+		in >> creatures_c;
+		in >> player_ability;
+		init_array(width, height, array_size);
+		for (int i = 0; i < creatures_c; i++) {
+			creature_type type_c;
+			int type, x, y, power, initiative, age;
+			in >> type >> x >> y >> power >> initiative >> age;
+			Creature* creature = nullptr;
+			type_c = static_cast<creature_type>(type);
+			switch (type_c)
+			{
+			case WILK:
+				creature = new Wilk(power, initiative, age, { x, y }, this);
+				break;
+			case LIS:
+				creature = new Lis(power, initiative, age, { x, y }, this);
+				break;
+			case TUTEL:
+				creature = new Tutel(power, initiative, age, { x, y }, this);
+				break;
+			case ANTYLOPA:
+				creature = new Antylopa(power, initiative, age, { x, y }, this);
+				break;
+			case OWCA:
+				creature = new Owca(power, initiative, age, { x, y }, this);
+				break;
+			case CYBER_OWCA:
+				//creature = new Cyber_Owca(power, initiative, age, { x, y }, this);
+				break;
+			case TRAWA:
+				creature = new Trawa(power, initiative, age, { x, y }, this);
+				break;
+			case MLECZ:
+				creature = new Mlecz(power, initiative, age, { x, y }, this);
+				break;
+			case GUARANA:
+				creature = new Guarana(power, initiative, age, { x, y }, this);
+				break;
+			case WILCZE_JAGODY:
+				creature = new WilczeJagody(power, initiative, age, { x, y }, this);
+				break;
+			case BARSZCZ_SOSNOWSKIEGO:
+				creature = new BarszczSosnowskiego(power, initiative, age, { x, y }, this);
+				break;
+			case STUDENT:																		
+				creature = new Cz³owiek(power, initiative, age, { x, y }, this);
+				break;
+			default:
+				break;
+			}
+			addCreature(creature);
+		}
+	}
+}
+
+void World::save() {
+	if (!file.is_open()) {
+		file.open(SAVE_FILE, std::ios::out);
+	}
+	if (file.is_open()) {
+		file << width << " " << height << std::endl;
+		file << array_size << std::endl;
+		file << creatureCount << std::endl;
+		file << player_ability << std::endl;
+		for (int i = 0; i < creatureCount; i++) {
+			file << creatures[i]->getType() << " " << creatures[i]->getX() << " " << creatures[i]->getY() << " " 
+				<< creatures[i]->getPower() << " " << creatures[i]->getInitiative() << " " << creatures[i]->getAge() << std::endl;
+		}
+	}
+	file.close();
 }
 
 World::~World() {
@@ -211,6 +325,9 @@ void World::read_player_input() {
 				std::cout << "ABILITY ALREADY ACTIVE" << std::endl;
 				break;
 			}
+		case SAVE:
+			save();
+			break;
 		default:
 			//std::cout << std::endl << "null" << std::endl;  // not arrow
 			break;

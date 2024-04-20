@@ -17,6 +17,15 @@ WilczeJagody::WilczeJagody(World* world, Point pos) {
 	this->world = world;
 }
 
+WilczeJagody::WilczeJagody(int power, int initiative, int age, Point position, World* world) {
+	this->power = power;
+	this->initiative = initiative;
+	this->age = age;
+	this->position = position;
+	this->type = WILCZE_JAGODY;
+	this->world = world;
+}
+
 Creature* WilczeJagody::create(World* world, Point pos) {
 	return new WilczeJagody(world, pos);
 }
