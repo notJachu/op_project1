@@ -1,4 +1,5 @@
 #include "tutel.h"
+#include "../../world.h"
 
 Tutel::Tutel(int power, int initiative, int age, Point position, World* world) {
 	this->power = power;

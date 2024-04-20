@@ -1,5 +1,7 @@
 #include "animal.h"
 #include "ctime"
+#include "../../world.h"
+#include "../creature.h"
 
 Point Animal::move() const {
 	Point positions[4]{};
@@ -41,7 +43,6 @@ bool Animal::reproduce() {
 	for (int i = 0; i < 4; i++) {
 		if (positions[i].x != -1) {
 			world->addCreature(this->create(world, positions[i]));
-			world->set_added_flag(1, true);
 			
 			log_event(std::cout, type, type, REPRODUCE);
 			return true;

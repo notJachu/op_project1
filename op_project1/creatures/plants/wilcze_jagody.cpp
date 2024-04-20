@@ -1,4 +1,6 @@
 #include "wilcze_jagody.h"
+#include "../creature.h"
+#include "../../world.h"
 
 WilczeJagody::WilczeJagody(Point pos) {
 	this->power = 99;

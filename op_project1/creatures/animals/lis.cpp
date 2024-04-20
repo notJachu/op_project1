@@ -1,4 +1,5 @@
 #include "lis.h"
+#include "../../world.h"
 
 Lis::Lis(int power, int initiative, int age, Point position, World* world) {
 	this->power = power;

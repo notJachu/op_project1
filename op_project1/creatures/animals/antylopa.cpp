@@ -1,6 +1,5 @@
 #include "antylopa.h"
-#include "antylopa.h"
-#include "antylopa.h"
+#include "../../world.h"
 
 bool Antylopa::run() {
 	int will_run = rand() % 2;

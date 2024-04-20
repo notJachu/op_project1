@@ -1,5 +1,6 @@
 #include "plant.h"
-#include "types.h"
+#include "../../types.h"
+#include "../../world.h"
 #include "ctime"
 
 void Plant::print(std::ostream& os) const {

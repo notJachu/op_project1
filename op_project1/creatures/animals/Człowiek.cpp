@@ -1,8 +1,7 @@
 #include "Cz³owiek.h"
-#include "World.h"
 #include "stdio.h"
-#include "types.h"
 #include <iostream>
+#include "../../world.h"
 
 
 Cz³owiek::Cz³owiek(int power, int initiative, int age, Point position, World* world) {

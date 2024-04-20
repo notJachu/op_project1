@@ -1,4 +1,6 @@
 #include "trawa.h"
+#include "../creature.h"
+#include "../../world.h"
 
 Trawa::Trawa(Point pos) {
 	this->power = 0;

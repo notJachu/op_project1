@@ -1,4 +1,5 @@
 #include "wilk.h"
+#include "../../world.h"
 
 Wilk::Wilk(int power, int initiative, int age, Point position, World* world) {
 	this->power = power;

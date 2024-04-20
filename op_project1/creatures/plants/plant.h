@@ -1,7 +1,7 @@
 #pragma once
-#include "creature.h"
-#include "types.h"
-#include "world.h"
+#include "../creature.h"
+#include "../../types.h"
+#include "../../world.h"
 
 class Plant : public Creature {
 protected:

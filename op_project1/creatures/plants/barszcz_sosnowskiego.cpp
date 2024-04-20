@@ -1,5 +1,6 @@
 #include "barszcz_sosnowskiego.h"
-#include "types.h"
+#include "../../types.h"
+#include "../../world.h"
 
 BarszczSosnowskiego::BarszczSosnowskiego(Point pos) {
 	this->power = 10;

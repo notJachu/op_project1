@@ -1,4 +1,6 @@
 #include "guarana.h"
+#include "../creature.h"
+#include "../../world.h"
 
 Guarana::Guarana(Point pos) {
 	this->power = 0;

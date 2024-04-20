@@ -1,4 +1,6 @@
 #include "mlecz.h"
+#include "../creature.h"
+#include "../../world.h"
 
 Mlecz::Mlecz(Point pos) {
 	this->power = 0;

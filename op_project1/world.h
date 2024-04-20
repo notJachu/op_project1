@@ -1,5 +1,5 @@
 #pragma once
-#include "creature.h"
+#include "creatures/creature.h"
 #include "types.h"
 #include <iostream>
 #include <fstream>
@@ -14,8 +14,6 @@ private:
 	int array_size;
 	int width;
 	int height;
-	bool has_added_animal;
-	bool has_added_plant;
 	void init_array(int width, int height, int size);
 	direction player_input;
 	int player_ability;
@@ -40,7 +38,6 @@ public:
 	void read_player_input();
 	direction get_player_input();
 	Point* get_free_neighbours(Point position);
-	void set_added_flag(int type, bool value); // 1 - animal	0 - plant
 	void sort_creatures();
 	void draw() const;
 };

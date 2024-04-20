@@ -5,116 +5,133 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Pliki nagłówkowe">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
     <Filter Include="Pliki zasobów">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Pliki źródłowe\creatures">
+      <UniqueIdentifier>{ecf3648d-aecb-4586-bc1a-4780ba62efc8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki źródłowe\creatures\plants">
+      <UniqueIdentifier>{4d81eb20-364e-4c6b-9d10-ed76222fe2a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki źródłowe\creatures\animals">
+      <UniqueIdentifier>{0af4b083-a4c2-49fc-aa55-efea84764f83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki nagłówkowe">
+      <UniqueIdentifier>{0d7c689c-1dc9-4c9b-9e79-6b1f61fac6c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki nagłówkowe\creatures">
+      <UniqueIdentifier>{9bbf8dd3-f9c5-46da-87b4-2906cbb6fb67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki nagłówkowe\creatures\animals">
+      <UniqueIdentifier>{72688148-c3d7-4607-9d92-86ef768594c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki nagłówkowe\creatures\plants">
+      <UniqueIdentifier>{d72059ce-bef9-4961-874e-d7d274804a7e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="types.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="world.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="creatures\creature.h">
+      <Filter>Pliki nagłówkowe\creatures</Filter>
+    </ClInclude>
+    <ClInclude Include="creatures\animals\animal.h">
+      <Filter>Pliki nagłówkowe\creatures\animals</Filter>
+    </ClInclude>
+    <ClInclude Include="creatures\animals\antylopa.h">
+      <Filter>Pliki nagłówkowe\creatures\animals</Filter>
+    </ClInclude>
+    <ClInclude Include="creatures\animals\Człowiek.h">
+      <Filter>Pliki nagłówkowe\creatures\animals</Filter>
+    </ClInclude>
+    <ClInclude Include="creatures\animals\lis.h">
+      <Filter>Pliki nagłówkowe\creatures\animals</Filter>
+    </ClInclude>
+    <ClInclude Include="creatures\animals\owca.h">
+      <Filter>Pliki nagłówkowe\creatures\animals</Filter>
+    </ClInclude>
+    <ClInclude Include="creatures\animals\tutel.h">
+      <Filter>Pliki nagłówkowe\creatures\animals</Filter>
+    </ClInclude>
+    <ClInclude Include="creatures\animals\wilk.h">
+      <Filter>Pliki nagłówkowe\creatures\animals</Filter>
+    </ClInclude>
+    <ClInclude Include="creatures\plants\barszcz_sosnowskiego.h">
+      <Filter>Pliki nagłówkowe\creatures\plants</Filter>
+    </ClInclude>
+    <ClInclude Include="creatures\plants\guarana.h">
+      <Filter>Pliki nagłówkowe\creatures\plants</Filter>
+    </ClInclude>
+    <ClInclude Include="creatures\plants\mlecz.h">
+      <Filter>Pliki nagłówkowe\creatures\plants</Filter>
+    </ClInclude>
+    <ClInclude Include="creatures\plants\plant.h">
+      <Filter>Pliki nagłówkowe\creatures\plants</Filter>
+    </ClInclude>
+    <ClInclude Include="creatures\plants\trawa.h">
+      <Filter>Pliki nagłówkowe\creatures\plants</Filter>
+    </ClInclude>
+    <ClInclude Include="creatures\plants\wilcze_jagody.h">
+      <Filter>Pliki nagłówkowe\creatures\plants</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="creatures\creature.cpp">
+      <Filter>Pliki źródłowe\creatures</Filter>
+    </ClCompile>
+    <ClCompile Include="creatures\animals\animal.cpp">
+      <Filter>Pliki źródłowe\creatures\animals</Filter>
+    </ClCompile>
+    <ClCompile Include="creatures\animals\antylopa.cpp">
+      <Filter>Pliki źródłowe\creatures\animals</Filter>
+    </ClCompile>
+    <ClCompile Include="creatures\animals\Człowiek.cpp">
+      <Filter>Pliki źródłowe\creatures\animals</Filter>
+    </ClCompile>
+    <ClCompile Include="creatures\animals\lis.cpp">
+      <Filter>Pliki źródłowe\creatures\animals</Filter>
+    </ClCompile>
+    <ClCompile Include="creatures\animals\owca.cpp">
+      <Filter>Pliki źródłowe\creatures\animals</Filter>
+    </ClCompile>
+    <ClCompile Include="creatures\animals\tutel.cpp">
+      <Filter>Pliki źródłowe\creatures\animals</Filter>
+    </ClCompile>
+    <ClCompile Include="creatures\animals\wilk.cpp">
+      <Filter>Pliki źródłowe\creatures\animals</Filter>
+    </ClCompile>
+    <ClCompile Include="creatures\plants\barszcz_sosnowskiego.cpp">
+      <Filter>Pliki źródłowe\creatures\plants</Filter>
+    </ClCompile>
+    <ClCompile Include="creatures\plants\guarana.cpp">
+      <Filter>Pliki źródłowe\creatures\plants</Filter>
+    </ClCompile>
+    <ClCompile Include="creatures\plants\mlecz.cpp">
+      <Filter>Pliki źródłowe\creatures\plants</Filter>
+    </ClCompile>
+    <ClCompile Include="creatures\plants\plant.cpp">
+      <Filter>Pliki źródłowe\creatures\plants</Filter>
+    </ClCompile>
+    <ClCompile Include="creatures\plants\trawa.cpp">
+      <Filter>Pliki źródłowe\creatures\plants</Filter>
+    </ClCompile>
+    <ClCompile Include="creatures\plants\wilcze_jagody.cpp">
+      <Filter>Pliki źródłowe\creatures\plants</Filter>
+    </ClCompile>
     <ClCompile Include="main.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="world.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="creature.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="plant.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="animal.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="trawa.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="mlecz.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="guarana.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="wilcze_jagody.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="barszcz_sosnowskiego.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="wilk.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="owca.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="lis.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="tutel.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
     <ClCompile Include="types.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
-    <ClCompile Include="antylopa.cpp">
+    <ClCompile Include="world.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
-    <ClCompile Include="Człowiek.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="world.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="creature.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="animal.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="types.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="trawa.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="plant.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="mlecz.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="guarana.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="wilcze_jagody.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="barszcz_sosnowskiego.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="wilk.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="owca.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="lis.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="tutel.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="antylopa.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="Człowiek.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

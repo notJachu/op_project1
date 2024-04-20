@@ -1,4 +1,5 @@
 #include "creature.h"
+#include "../types.h"
 
 std::ostream& operator<<(std::ostream& os, const Creature& creature) {
 	creature.print(os);

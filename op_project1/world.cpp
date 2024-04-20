@@ -2,17 +2,19 @@
 #include "types.h"
 #include "Windows.h"
 #include "fstream"
-#include "wilk.h"
-#include "lis.h"
-#include "tutel.h"
-#include "antylopa.h"
-#include "owca.h"
-#include "trawa.h"
-#include "mlecz.h"
-#include "guarana.h"
-#include "Cz³owiek.h"
-#include "wilcze_jagody.h"
-#include "barszcz_sosnowskiego.h"
+#include "iostream"
+#include "creatures/creature.h"
+#include "creatures/animals/wilk.h"
+#include "creatures/animals/lis.h"
+#include "creatures/animals/tutel.h"
+#include "creatures/animals/antylopa.h"
+#include "creatures/animals/owca.h"
+#include "creatures/animals/Cz³owiek.h"
+#include "creatures/plants/trawa.h"
+#include "creatures/plants/mlecz.h"
+#include "creatures/plants/guarana.h"
+#include "creatures/plants/wilcze_jagody.h"
+#include "creatures/plants/barszcz_sosnowskiego.h"
 
 
 #define KEY_UP 72
@@ -367,14 +369,6 @@ Point* World::get_free_neighbours(Point position) {
 	return res;
 }
 
-void World::set_added_flag(int type, bool value) {
-	if (type == 0) {
-		has_added_animal = value;
-	}
-	else {
-		has_added_animal = value;
-	}
-}
 
 void World::sort_creatures() {
 	int i, key, j;

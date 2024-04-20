@@ -1,17 +1,17 @@
 #include <iostream>
 #include <fstream>
 #include "world.h"
-#include "creature.h"
-#include "animal.h"
-#include "plant.h"
-#include "trawa.h"
-#include "wilk.h"
-#include "antylopa.h"
-#include "guarana.h"
-#include "mlecz.h"
-#include "barszcz_sosnowskiego.h"
-#include "tutel.h"
-#include "Cz³owiek.h"
+#include "creatures/creature.h"
+#include "creatures/animals/animal.h"
+#include "creatures/plants/plant.h"
+#include "creatures/plants/trawa.h"
+#include "creatures/animals/wilk.h"
+#include "creatures/animals/antylopa.h"
+#include "creatures/plants/guarana.h"
+#include "creatures/plants/mlecz.h"
+#include "creatures/plants/barszcz_sosnowskiego.h"
+#include "creatures/animals/tutel.h"
+#include "creatures/animals/Cz³owiek.h"
 
 
 

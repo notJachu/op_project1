@@ -127,41 +127,41 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="animal.cpp" />
-    <ClCompile Include="antylopa.cpp" />
-    <ClCompile Include="barszcz_sosnowskiego.cpp" />
-    <ClCompile Include="creature.cpp" />
-    <ClCompile Include="Człowiek.cpp" />
-    <ClCompile Include="guarana.cpp" />
-    <ClCompile Include="lis.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="mlecz.cpp" />
-    <ClCompile Include="owca.cpp" />
-    <ClCompile Include="plant.cpp" />
-    <ClCompile Include="trawa.cpp" />
-    <ClCompile Include="tutel.cpp" />
-    <ClCompile Include="types.cpp" />
-    <ClCompile Include="wilcze_jagody.cpp" />
-    <ClCompile Include="wilk.cpp" />
-    <ClCompile Include="world.cpp" />
+    <ClInclude Include="creatures\animals\animal.h" />
+    <ClInclude Include="creatures\animals\antylopa.h" />
+    <ClInclude Include="creatures\animals\Człowiek.h" />
+    <ClInclude Include="creatures\animals\lis.h" />
+    <ClInclude Include="creatures\animals\owca.h" />
+    <ClInclude Include="creatures\animals\tutel.h" />
+    <ClInclude Include="creatures\animals\wilk.h" />
+    <ClInclude Include="creatures\creature.h" />
+    <ClInclude Include="creatures\plants\barszcz_sosnowskiego.h" />
+    <ClInclude Include="creatures\plants\guarana.h" />
+    <ClInclude Include="creatures\plants\mlecz.h" />
+    <ClInclude Include="creatures\plants\plant.h" />
+    <ClInclude Include="creatures\plants\trawa.h" />
+    <ClInclude Include="creatures\plants\wilcze_jagody.h" />
+    <ClInclude Include="types.h" />
+    <ClInclude Include="world.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="animal.h" />
-    <ClInclude Include="antylopa.h" />
-    <ClInclude Include="barszcz_sosnowskiego.h" />
-    <ClInclude Include="creature.h" />
-    <ClInclude Include="Człowiek.h" />
-    <ClInclude Include="guarana.h" />
-    <ClInclude Include="lis.h" />
-    <ClInclude Include="mlecz.h" />
-    <ClInclude Include="owca.h" />
-    <ClInclude Include="plant.h" />
-    <ClInclude Include="trawa.h" />
-    <ClInclude Include="tutel.h" />
-    <ClInclude Include="types.h" />
-    <ClInclude Include="wilcze_jagody.h" />
-    <ClInclude Include="wilk.h" />
-    <ClInclude Include="world.h" />
+    <ClCompile Include="creatures\animals\animal.cpp" />
+    <ClCompile Include="creatures\animals\antylopa.cpp" />
+    <ClCompile Include="creatures\animals\Człowiek.cpp" />
+    <ClCompile Include="creatures\animals\lis.cpp" />
+    <ClCompile Include="creatures\animals\owca.cpp" />
+    <ClCompile Include="creatures\animals\tutel.cpp" />
+    <ClCompile Include="creatures\animals\wilk.cpp" />
+    <ClCompile Include="creatures\creature.cpp" />
+    <ClCompile Include="creatures\plants\barszcz_sosnowskiego.cpp" />
+    <ClCompile Include="creatures\plants\guarana.cpp" />
+    <ClCompile Include="creatures\plants\mlecz.cpp" />
+    <ClCompile Include="creatures\plants\plant.cpp" />
+    <ClCompile Include="creatures\plants\trawa.cpp" />
+    <ClCompile Include="creatures\plants\wilcze_jagody.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="types.cpp" />
+    <ClCompile Include="world.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
