@@ -1,4 +1,4 @@
-#include "world.h"
+Ôªø#include "world.h"
 #include "types.h"
 #include "Windows.h"
 #include "fstream"
@@ -9,7 +9,7 @@
 #include "creatures/animals/tutel.h"
 #include "creatures/animals/antylopa.h"
 #include "creatures/animals/owca.h"
-#include "creatures/animals/Cz≥owiek.h"
+#include "creatures/animals/Cz≈Çowiek.h"
 #include "creatures/plants/trawa.h"
 #include "creatures/plants/mlecz.h"
 #include "creatures/plants/guarana.h"
@@ -24,7 +24,7 @@
 #define KEY_PRE 224
 #define ABILITY 112
 #define SAVE 115
-#define SAVE_FILE "save.txt"
+#define SAVE_FILE "save2.txt"
 
 
 void World::init_array(int width, int height, int size) {
@@ -129,7 +129,7 @@ World::World(std::fstream& in) {
 				creature = new BarszczSosnowskiego(power, initiative, age, { x, y }, this);
 				break;
 			case STUDENT:																		
-				creature = new Cz≥owiek(power, initiative, age, { x, y }, this);
+				creature = new Cz≈Çowiek(power, initiative, age, { x, y }, this);
 				break;
 			default:
 				break;
@@ -280,7 +280,7 @@ void World::playTurn() {
 	
 	read_player_input();
 	system("cls");
-	std::cout << "OP projekt 1 - 197741 Jan Stπsiek" << std::endl;
+	std::cout << "OP projekt 1 - 197741 Jan St¬πsiek" << std::endl;
 	for (int i = 0; i < c; i++) {
 		if (creatures[i] != nullptr) {
 			creatures[i]->action();

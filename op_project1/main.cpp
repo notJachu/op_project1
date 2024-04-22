@@ -1,4 +1,4 @@
-#include <iostream>
+Ôªø#include <iostream>
 #include <fstream>
 #include "world.h"
 #include "creatures/creature.h"
@@ -11,25 +11,34 @@
 #include "creatures/plants/mlecz.h"
 #include "creatures/plants/barszcz_sosnowskiego.h"
 #include "creatures/animals/tutel.h"
-#include "creatures/animals/Cz≥owiek.h"
+#include "creatures/animals/Cz≈Çowiek.h"
+#include "creatures/plants/wilcze_jagody.h"
 
 
 
 
 int main() {
-	//World world;
-	//world.addCreature(new Trawa(&world, {3 , 3}));
-	//world.addCreature(new Wilk(&world, { 1, 1 }));
-	//world.addCreature(new Wilk(&world, { 1, 2 }));
-	//world.addCreature(new Trawa(&world, { 3 , 5 }));
-	//world.addCreature(new Antylopa(&world, { 5 , 5 }));
-	//world.addCreature(new Guarana(&world, { 1, 4 }));
-	//world.addCreature(new Cz≥owiek(&world, { 10, 10 }));
-	//world.print(std::cout);
-	//world.draw();
+	/*World world(30, 30);
+	world.addCreature(new Trawa(&world, {3 , 3}));
+	world.addCreature(new Wilk(&world, { 1, 1 }));
+	world.addCreature(new Wilk(&world, { 1, 2 }));
+	world.addCreature(new Trawa(&world, { 3 , 5 }));
+	world.addCreature(new Antylopa(&world, { 5 , 5 }));
+	world.addCreature(new Guarana(&world, { 1, 4 }));
+	world.addCreature(new Cz≈Çowiek(&world, { 10, 10 }));
+	world.addCreature(new Tutel(&world, { 15, 11 }));
+	world.addCreature(new Mlecz(&world, { 15, 12 }));
+	world.addCreature(new BarszczSosnowskiego(&world, { 15, 20 }));
+	world.addCreature(new WilczeJagody(&world, { 20, 20 }));
+
+	world.print(std::cout);
+	world.draw();
+
+	world.save();*/
+
 
 	std::fstream file;
-	file.open("save.txt", std::ios::in);
+	file.open("save2.txt", std::ios::in);
 	World world(file);
 	file.close();
 

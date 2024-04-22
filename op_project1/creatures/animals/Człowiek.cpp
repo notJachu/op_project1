@@ -1,10 +1,10 @@
-#include "Cz≥owiek.h"
+Ôªø#include "Cz≈Çowiek.h"
 #include "stdio.h"
 #include <iostream>
 #include "../../world.h"
 
 
-Cz≥owiek::Cz≥owiek(int power, int initiative, int age, Point position, World* world) {
+Cz≈Çowiek::Cz≈Çowiek(int power, int initiative, int age, Point position, World* world) {
 	this->power = power;
 	this->initiative = initiative;
 	this->age = age;
@@ -13,7 +13,7 @@ Cz≥owiek::Cz≥owiek(int power, int initiative, int age, Point position, World* wo
 	this->world = world;
 }
 
-Cz≥owiek::Cz≥owiek(World* world, Point pos) {
+Cz≈Çowiek::Cz≈Çowiek(World* world, Point pos) {
 	this->power = 5;
 	this->initiative = 4;
 	this->age = 0;
@@ -22,19 +22,19 @@ Cz≥owiek::Cz≥owiek(World* world, Point pos) {
 	this->world = world;
 }
 
-Creature* Cz≥owiek::create(World* world, Point pos) {
-	return new Cz≥owiek(world, pos);
+Creature* Cz≈Çowiek::create(World* world, Point pos) {
+	return new Cz≈Çowiek(world, pos);
 }
 
-void Cz≥owiek::draw()
+void Cz≈Çowiek::draw()
 {
 }
 
-Point Cz≥owiek::move() const {
+Point Cz≈Çowiek::move() const {
 	return Point();
 }
 
-void Cz≥owiek::action() {
+void Cz≈Çowiek::action() {
 	int ability = world->getPlayerAbility();
 	if (ability == 0) {
 		power += 5;
@@ -79,14 +79,14 @@ void Cz≥owiek::action() {
 	
 }
 
-bool Cz≥owiek::collision(Creature* creature) {
+bool Cz≈Çowiek::collision(Creature* creature) {
 	return false;
 }
 
-void Cz≥owiek::print(std::ostream& os) const {
-	os << "Cz≥owiek: power=" << power << " initiative=" << initiative << " age=" << age << " position=(" << position.x << "," << position.y << ")";
+void Cz≈Çowiek::print(std::ostream& os) const {
+	os << "Cz≈Çowiek: power=" << power << " initiative=" << initiative << " age=" << age << " position=(" << position.x << "," << position.y << ")";
 }
 
-Cz≥owiek::~Cz≥owiek()
+Cz≈Çowiek::~Cz≈Çowiek()
 {
 }
