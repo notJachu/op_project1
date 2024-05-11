@@ -47,7 +47,7 @@
     <ClInclude Include="creatures\animals\antylopa.h">
       <Filter>Pliki nagłówkowe\creatures\animals</Filter>
     </ClInclude>
-    <ClInclude Include="creatures\animals\Człowiek.h">
+    <ClInclude Include="creatures\animals\czlowiek.h">
       <Filter>Pliki nagłówkowe\creatures\animals</Filter>
     </ClInclude>
     <ClInclude Include="creatures\animals\lis.h">
@@ -91,7 +91,7 @@
     <ClCompile Include="creatures\animals\antylopa.cpp">
       <Filter>Pliki źródłowe\creatures\animals</Filter>
     </ClCompile>
-    <ClCompile Include="creatures\animals\Człowiek.cpp">
+    <ClCompile Include="creatures\animals\czlowiek.cpp">
       <Filter>Pliki źródłowe\creatures\animals</Filter>
     </ClCompile>
     <ClCompile Include="creatures\animals\lis.cpp">

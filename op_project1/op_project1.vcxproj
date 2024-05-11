@@ -129,7 +129,7 @@
   <ItemGroup>
     <ClInclude Include="creatures\animals\animal.h" />
     <ClInclude Include="creatures\animals\antylopa.h" />
-    <ClInclude Include="creatures\animals\Człowiek.h" />
+    <ClInclude Include="creatures\animals\czlowiek.h" />
     <ClInclude Include="creatures\animals\lis.h" />
     <ClInclude Include="creatures\animals\owca.h" />
     <ClInclude Include="creatures\animals\tutel.h" />
@@ -147,7 +147,7 @@
   <ItemGroup>
     <ClCompile Include="creatures\animals\animal.cpp" />
     <ClCompile Include="creatures\animals\antylopa.cpp" />
-    <ClCompile Include="creatures\animals\Człowiek.cpp" />
+    <ClCompile Include="creatures\animals\czlowiek.cpp" />
     <ClCompile Include="creatures\animals\lis.cpp" />
     <ClCompile Include="creatures\animals\owca.cpp" />
     <ClCompile Include="creatures\animals\tutel.cpp" />
