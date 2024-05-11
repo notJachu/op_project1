@@ -9,7 +9,7 @@
 #include "creatures/animals/tutel.h"
 #include "creatures/animals/antylopa.h"
 #include "creatures/animals/owca.h"
-#include "creatures/animals/czlowiek.h"
+#include "creatures/animals/Człowiek.h"
 #include "creatures/plants/trawa.h"
 #include "creatures/plants/mlecz.h"
 #include "creatures/plants/guarana.h"

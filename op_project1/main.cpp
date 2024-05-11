@@ -11,7 +11,7 @@
 #include "creatures/plants/mlecz.h"
 #include "creatures/plants/barszcz_sosnowskiego.h"
 #include "creatures/animals/tutel.h"
-#include "creatures/animals/czlowiek.h"
+#include "creatures/animals/Człowiek.h"
 #include "creatures/plants/wilcze_jagody.h"
 
 
@@ -42,14 +42,7 @@ int main() {
 	World world(file);
 	file.close();
 
-	//for (int i = 0; i < 10; i++) {
-	//	world.playTurn();
-	//	std::cout << std::endl;
-	//	world.draw();
-	//	//world.print(std::cout);
-	//}
-
-	while (true) {
+	for (int i = 0; i < 10; i++) {
 		world.playTurn();
 		std::cout << std::endl;
 		world.draw();
